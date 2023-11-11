@@ -1,27 +1,26 @@
+¬ (A ⋁ B) ⇔ (¬ A ∧ ¬ B)
 
-	(P4):
-		¬ (A ⋁ B) ⇔ (¬ A ∧ ¬ B)
-		(=>)
-			If ¬ (A ⋁ B):
-				If A:
-					A ⋁ B
-					⊥ 
+(=>)
+	If ¬ (A ⋁ B):
+		If A:
+			A ⋁ B
+			⊥ 
+		¬ A
+		If B:
+			A ⋁ B
+			⊥ 
+		¬ B
+		¬ A ∧ ¬ B
+	¬ (A ⋁ B) ⇒ ¬ A ∧ ¬ B
+(<=)
+	If ¬ A ∧ ¬ B:
+		If A ⋁ B:
+			If A:
 				¬ A
-				If B:
-					A ⋁ B
-					⊥ 
+				⊥ 
+			If B:
 				¬ B
-				¬ A ∧ ¬ B
-			¬ (A ⋁ B) ⇒ ¬ A ∧ ¬ B
-		(<=)
-			If ¬ A ∧ ¬ B:
-				If A ⋁ B:
-					If A:
-						¬ A
-						⊥ 
-					If B:
-						¬ B
-						⊥
-					⊥ 
-				¬ (A ⋁ B)
-			(¬ A ∧ ¬ B) ⇒ ¬ (A ⋁ B)
+				⊥
+			⊥ 
+		¬ (A ⋁ B)
+	(¬ A ∧ ¬ B) ⇒ ¬ (A ⋁ B)

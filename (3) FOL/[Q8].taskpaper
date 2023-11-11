@@ -1,4 +1,5 @@
 ∀ x,y,z ∈ B ( p(x) = p(y) ∧ p(y) = p(z) ⇒ x = y ⋁ y = z ⋁ z = x ) ⇒ ∀ x ∈ B ∃ y,z ∈ B ∀ w ∈ B ( p(w) = x ⇒ w = y ⋁ w = z ), where p : B -> B.
+
 If ∀ x,y,z ∈ B ( p(x) = p(y) ∧ p(y) = p(z) ⇒ x = y ⋁ y = z ⋁ z = x ):
   Given a ∈ B:
     ∃y,z ∈ B ( p(y) = a ∧ p(x) = a ∧ y ≠ z ) ⋁ ¬∃y,z ∈ B ( p(y) = a ∧ p(z) = a ∧ y ≠ z ) [LEM]

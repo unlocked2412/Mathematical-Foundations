@@ -1,10 +1,11 @@
 ¬∃ x ∈ S(P(x)) ⇒ ∀ x ∈ S(¬P(x)) 
-  If ¬∃ x ∈ S(P(x)):
-    Given y ∈ S:
-      If P(y):
-        ∃ x ∈ S(P(x))
-        ⊥ 
-      ¬P(y)
-    ∀ y ∈ S (¬P(y))
-    ∀ x ∈ S (¬P(x)) [rename]
-  ¬∃ x ∈ S(P(x)) ⇒ ∀ x ∈ S(¬P(x))
+
+If ¬∃ x ∈ S(P(x)):
+  Given y ∈ S:
+    If P(y):
+      ∃ x ∈ S(P(x))
+      ⊥ 
+    ¬P(y)
+  ∀ y ∈ S (¬P(y))
+  ∀ x ∈ S (¬P(x)) [rename]
+¬∃ x ∈ S(P(x)) ⇒ ∀ x ∈ S(¬P(x))

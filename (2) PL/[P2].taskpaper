@@ -1,28 +1,30 @@
-If (A or B) and (B or C) and (C or A):
-	A or B
-	B or C
-	C or A
+(A ∨ B) ∧ (B ∨ C) ∧ (C ∨ A) ⇒  (A ∧ B) ∨ (B ∧ C) ∨ (C ∧ A)
+
+If (A ∨ B) ∧ (B ∨ C) ∧ (C ∨ A):
+	A ∨ B
+	B ∨ C
+	C ∨ A
 	If A:
 		If B:
-			A and B
-			(A and B) or (B and C) or (C and A)
-		B implies (A and B) or (B and C) or (C and A)
+			A ∧ B
+			(A ∧ B) ∨ (B ∧ C) ∨ (C ∧ A)
+		B ⇒  (A ∧ B) ∨ (B ∧ C) ∨ (C ∧ A)
 		If C:
-			C and A
-			(A and B) or (B and C) or (C and A)
-		C implies (A and B) or (B and C) or (C and A)
-		(A and B) or (B and C) or (C and A)
-	A implies (A and B) or (B and C) or (C and A)
+			C ∧ A
+			(A ∧ B) ∨ (B ∧ C) ∨ (C ∧ A)
+		C ⇒  (A ∧ B) ∨ (B ∧ C) ∨ (C ∧ A)
+		(A ∧ B) ∨ (B ∧ C) ∨ (C ∧ A)
+	A ⇒  (A ∧ B) ∨ (B ∧ C) ∨ (C ∧ A)
 	If B:
 		If C:
-			B and C
-			(A and B) or (B and C) or (C and A)
-		C implies (A and B) or (B and C) or (C and A)
+			B ∧ C
+			(A ∧ B) ∨ (B ∧ C) ∨ (C ∧ A)
+		C ⇒ (A ∧ B) ∨ (B ∧ C) ∨ (C ∧ A)
 		If A:
-			A and B
-			(A and B) or (B and C) or (C and A)
-		A implies (A and B) or (B and C) or (C and A)
-		(A and B) or (B and C) or (C and A)
-	B implies (A and B) or (B and C) or (C and A)
-	(A and B) or (B and C) or (C and A)
-(A or B) and (B or C) and (C or A) implies (A and B) or (B and C) or (C and A)
+			A ∧ B
+			(A ∧ B) ∨ (B ∧ C) ∨ (C ∧ A)
+		A ⇒  (A ∧ B) ∨ (B ∧ C) ∨ (C ∧ A)
+		(A ∧ B) ∨ (B ∧ C) ∨ (C ∧ A)
+	B ⇒  (A ∧ B) ∨ (B ∧ C) ∨ (C ∧ A)
+	(A ∧ B) ∨ (B ∧ C) ∨ (C ∧ A)
+(A ∨ B) ∧ (B ∨ C) ∧ (C ∨ A) ⇒ (A ∧ B) ∨ (B ∧ C) ∨ (C ∧ A)

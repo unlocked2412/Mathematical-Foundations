@@ -1,4 +1,5 @@
 ∀ y ∈ T ( f(g(y)) = y ) ∧ ∀ x ∈ S ∃ y ∈ T ( g(y) = x ) ⇒ ∀ x,y ∈ S (f(x) = f(y) ⇒ x = y), where f : S -> T and g : T -> S
+
 Version 1:
   If ∀ y ∈ T ( f(g(y)) = y ) ∧ ∀ x ∈ S ∃ y ∈ T ( g(y) = x ):
     ∀ y ∈ T ( f(g(y)) = y )

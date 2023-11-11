@@ -1,132 +1,133 @@
 ∀x,y∈V ( c(x,y) ⇒ c(y,x) ) ∧ ∀x,y,z∈V ( c(x,y) ∨ c(y,z) ∨ c(z,x) ) ⇒ ∀w∈V ∃x,y,z∈V ( c(x,y) ∧ c(y,z) ∧ c(z,x) ∧ x ≠ y ∧ y ≠ z ∧ z ≠ x ) ∨ ∃x,y,z,w,u ∈V ∀t∈V ( t = x ∨ t = y ∨ t = z ∨ t = u ⋁ t = w ), where c : V^2→Bool.
-  If ∀x,y∈V ( c(x,y) ⇒ c(y,x) ) ∧ ∀x,y,z∈V ( c(x,y) ∨ c(y,z) ∨ c(z,x) ):
-    If ¬( ∀w∈V ∃x,y,z∈V ( c(x,y) ∧ c(y,z) ∧ c(z,x) ∧ x ≠ y ∧ y ≠ z ∧ z ≠ x ) ∨ ∃x,y,z,w,u ∈V ∀t∈V ( t = x ∨ t = y ∨ t = z ∨ t = u ⋁ t = w ) ):
-      ¬∀w∈V ∃x,y,z∈V ( c(x,y) ∧ c(y,z) ∧ c(z,x) ∧ x ≠ y ∧ y ≠ z ∧ z ≠ x ) ∧ ¬∃x,y,z,w,u ∈V ∀t∈V ( t = x ∨ t = y ∨ t = z ∨ t = u ⋁ t = w )
-      ∃w∈V ¬∃x,y,z∈V ( c(x,y) ∧ c(y,z) ∧ c(z,x) ∧ x ≠ y ∧ y ≠ z ∧ z ≠ x ) 
-      Let a ∈ V such that ¬∃x,y,z∈V ( c(x,y) ∧ c(y,z) ∧ c(z,x) ∧ x ≠ y ∧ y ≠ z ∧ z ≠ x ) 
-      ¬∃x,y,z∈V ( c(x,y) ∧ c(y,z) ∧ c(z,x) ∧ x ≠ y ∧ y ≠ z ∧ z ≠ x ) [no black triangle]
-      Given x,y,z ∈ V:
-        c(x,y) ∨ c(y,z) ∨ c(z,x) 
-        ¬c(x,y) ∧ ¬c(y,z) ⇒ c(z,x) 
-      ∀x,y,z∈V ( ¬c(x,y) ∧ ¬c(y,z) ⇒ c(z,x) )
-      Given x,y,z ∈ V:
-        If ¬c(a,x) ∧ ¬c(a,y) ∧ ¬c(a,z) ∧ x ≠ y ∧ x ≠ z ∧ y ≠ z:
-          ¬c(y,a) ∧ ¬c(a,x)
-          c(y,x)
-          ¬c(z,a) ∧ ¬c(a,x)
-          c(z,x)
-          ¬c(y,a) ∧ ¬c(a,z)
-          c(y,z)
-          c(x,y) ∧ c(y,z) ∧ c(z,x) ∧ x ≠ y ∧ y ≠ z ∧ z ≠ x
-          ∃x,y,z∈V ( c(x,y) ∧ c(y,z) ∧ c(z,x) ∧ x ≠ y ∧ y ≠ z ∧ z ≠ x ) [black triangle]
+
+If ∀x,y∈V ( c(x,y) ⇒ c(y,x) ) ∧ ∀x,y,z∈V ( c(x,y) ∨ c(y,z) ∨ c(z,x) ):
+  If ¬( ∀w∈V ∃x,y,z∈V ( c(x,y) ∧ c(y,z) ∧ c(z,x) ∧ x ≠ y ∧ y ≠ z ∧ z ≠ x ) ∨ ∃x,y,z,w,u ∈V ∀t∈V ( t = x ∨ t = y ∨ t = z ∨ t = u ⋁ t = w ) ):
+    ¬∀w∈V ∃x,y,z∈V ( c(x,y) ∧ c(y,z) ∧ c(z,x) ∧ x ≠ y ∧ y ≠ z ∧ z ≠ x ) ∧ ¬∃x,y,z,w,u ∈V ∀t∈V ( t = x ∨ t = y ∨ t = z ∨ t = u ⋁ t = w )
+    ∃w∈V ¬∃x,y,z∈V ( c(x,y) ∧ c(y,z) ∧ c(z,x) ∧ x ≠ y ∧ y ≠ z ∧ z ≠ x ) 
+    Let a ∈ V such that ¬∃x,y,z∈V ( c(x,y) ∧ c(y,z) ∧ c(z,x) ∧ x ≠ y ∧ y ≠ z ∧ z ≠ x ) 
+    ¬∃x,y,z∈V ( c(x,y) ∧ c(y,z) ∧ c(z,x) ∧ x ≠ y ∧ y ≠ z ∧ z ≠ x ) [no black triangle]
+    Given x,y,z ∈ V:
+      c(x,y) ∨ c(y,z) ∨ c(z,x) 
+      ¬c(x,y) ∧ ¬c(y,z) ⇒ c(z,x) 
+    ∀x,y,z∈V ( ¬c(x,y) ∧ ¬c(y,z) ⇒ c(z,x) )
+    Given x,y,z ∈ V:
+      If ¬c(a,x) ∧ ¬c(a,y) ∧ ¬c(a,z) ∧ x ≠ y ∧ x ≠ z ∧ y ≠ z:
+        ¬c(y,a) ∧ ¬c(a,x)
+        c(y,x)
+        ¬c(z,a) ∧ ¬c(a,x)
+        c(z,x)
+        ¬c(y,a) ∧ ¬c(a,z)
+        c(y,z)
+        c(x,y) ∧ c(y,z) ∧ c(z,x) ∧ x ≠ y ∧ y ≠ z ∧ z ≠ x
+        ∃x,y,z∈V ( c(x,y) ∧ c(y,z) ∧ c(z,x) ∧ x ≠ y ∧ y ≠ z ∧ z ≠ x ) [black triangle]
+        ⊥
+    ∀ x,y,z ∈ V ( ¬c(a,x) ∧ ¬c(a,y) ∧ ¬c(a,z) ∧ x ≠ y ∧ x ≠ z ∧ y ≠ z ⇒ ⊥ ) [3 white edges from a ⇒ ⊥ ]
+    Given x,y,z ∈ V:
+      If c(a,x) ∧ c(a,y) ∧ c(a,z) ∧ x ≠ y ∧ x ≠ z ∧ y ≠ z ∧ a ≠ x ∧ a ≠ y ∧ a ≠ z: [3 black edges from a]
+        If c(x,y):
+          c(x,a) ∧ c(a,y) ∧ c(x,y) ∧ a ≠ x ∧ a ≠ y ∧ x ≠ y  [black triangle]
+          ∃x,y,z∈V ( c(x,y) ∧ c(y,z) ∧ c(z,x) ∧ x ≠ y ∧ y ≠ z ∧ z ≠ x )
           ⊥
-      ∀ x,y,z ∈ V ( ¬c(a,x) ∧ ¬c(a,y) ∧ ¬c(a,z) ∧ x ≠ y ∧ x ≠ z ∧ y ≠ z ⇒ ⊥ ) [3 white edges from a ⇒ ⊥ ]
-      Given x,y,z ∈ V:
-        If c(a,x) ∧ c(a,y) ∧ c(a,z) ∧ x ≠ y ∧ x ≠ z ∧ y ≠ z ∧ a ≠ x ∧ a ≠ y ∧ a ≠ z: [3 black edges from a]
-          If c(x,y):
-            c(x,a) ∧ c(a,y) ∧ c(x,y) ∧ a ≠ x ∧ a ≠ y ∧ x ≠ y  [black triangle]
-            ∃x,y,z∈V ( c(x,y) ∧ c(y,z) ∧ c(z,x) ∧ x ≠ y ∧ y ≠ z ∧ z ≠ x )
+        If ¬c(x,y):
+          If c(y,z):
+            c(a,y) ∧ c(y,z) ∧ c(z,a) ∧ a ≠ y ∧ a ≠ z ∧ y ≠ z [black triangle]
+            ∃x,y,z∈V ( c(x,y) ∧ c(y,z) ∧ c(z,x) ∧ x ≠ y ∧ y ≠ z ∧ z ≠ x ) [black triangle]
             ⊥
-          If ¬c(x,y):
-            If c(y,z):
-              c(a,y) ∧ c(y,z) ∧ c(z,a) ∧ a ≠ y ∧ a ≠ z ∧ y ≠ z [black triangle]
-              ∃x,y,z∈V ( c(x,y) ∧ c(y,z) ∧ c(z,x) ∧ x ≠ y ∧ y ≠ z ∧ z ≠ x ) [black triangle]
+          If ¬c(y,z):
+            If c(z,x):
+              c(x,a) ∧ c(a,z) ∧ c(z,x) ∧ a ≠ x ∧ a ≠ z ∧ z ≠ x [black triangle]
+              ∃x,y,z∈V ( c(x,y) ∧ c(y,z) ∧ c(z,x) ∧ x ≠ y ∧ y ≠ z ∧ z ≠ x ) 
               ⊥
-            If ¬c(y,z):
+            If ¬c(z,x):
+              ¬c(x,y) ∧ ¬c(y,z) ∧ ¬c(z,x) ∧ x ≠ y ∧ y ≠ z ∧ z ≠ x [white triangle]
+              c(x,y) ∨ c(y,z) ∨ c(z,x)
+              If c(x,y):
+                ⊥
+              If c(y,z):
+                ⊥
               If c(z,x):
-                c(x,a) ∧ c(a,z) ∧ c(z,x) ∧ a ≠ x ∧ a ≠ z ∧ z ≠ x [black triangle]
-                ∃x,y,z∈V ( c(x,y) ∧ c(y,z) ∧ c(z,x) ∧ x ≠ y ∧ y ≠ z ∧ z ≠ x ) 
-                ⊥
-              If ¬c(z,x):
-                ¬c(x,y) ∧ ¬c(y,z) ∧ ¬c(z,x) ∧ x ≠ y ∧ y ≠ z ∧ z ≠ x [white triangle]
-                c(x,y) ∨ c(y,z) ∨ c(z,x)
-                If c(x,y):
-                  ⊥
-                If c(y,z):
-                  ⊥
-                If c(z,x):
-                  ⊥
                 ⊥
               ⊥
-            ⊥ 
-          ⊥
-      ∀ x,y,z ∈ V ( c(a,x) ∧ c(a,y) ∧ c(a,z) ∧ x ≠ y ∧ x ≠ z ∧ y ≠ z ∧ a ≠ x ∧ a ≠ y ∧ a ≠ z ⇒ ⊥ ) [3 black edges from a ⇒ ⊥ ]
-      ¬∃x,y,z,w,u ∈V ∀t∈V ( t = x ∨ t = y ∨ t = z ∨ t = u ⋁ t = w )
-      ∀x,y,z,w,u ∈V ∃t∈V ( t ≠ x ∧ t ≠ y ∧ t ≠ z ∧ t ≠ u ∧ t ≠ w )
-      ∃t∈V ( t ≠ a ∧ t ≠ a ∧ t ≠ a ∧ t ≠ a ∧ t ≠ a )
-      Let b ∈ V such that b ≠ a ∧ b ≠ a ∧ b ≠ a ∧ b ≠ a ∧ b ≠ a
-      b ≠ a
-      ∃t∈V ( t ≠ b ∧ t ≠ b ∧ t ≠ b ∧ t ≠ a ∧ t ≠ a )
-      Let d ∈V such that d ≠ b ∧ d ≠ b ∧ d ≠ b ∧ d ≠ a ∧ d ≠ a
-      d ≠ b ∧ d ≠ a
-      ∃t ∈ V ( t ≠ d ∧ t ≠ d ∧ t ≠ d ∧ t ≠ b ∧ t ≠ a )
-      Let e ∈ V such that e ≠ d ∧ e ≠ d ∧ e ≠ d ∧ e ≠ b ∧ e ≠ a
-      e ≠ d ∧ e ≠ b ∧ e ≠ a
-      ∃t∈V ( t ≠ e ∧ t ≠ e ∧ t ≠ d ∧ t ≠ b ∧ t ≠ a )
-      Let f ∈ V such that f ≠ e ∧ f ≠ e ∧ f ≠ d ∧ f ≠ b ∧ f ≠ a
-      ∃t∈V ( t ≠ f ∧ t ≠ e ∧ t ≠ d ∧ t ≠ b ∧ t ≠ a )
-      Let g ∈ V such that g ≠ f ∧ g ≠ e ∧ g ≠ d ∧ g ≠ b ∧ g ≠ a
-      g ≠ f ∧ g ≠ e ∧ g ≠ d ∧ g ≠ b ∧ g ≠ a ∧ f ≠ e ∧ f ≠ d ∧ f ≠ b ∧ f ≠ a ∧ e ≠ d ∧ e ≠ b ∧ e ≠ a ∧ d ≠ b ∧ d ≠ a ∧ b ≠ a @now
-      If c(a,b):
-        If c(a,d):
-          If c(a,e):
             ⊥
-          If ¬c(a,e):
-            If c(a,f):
-              ⊥ 
-            If ¬c(a,f):
-              If c(a,g):
-                ⊥ 
-              If ¬c(a,g):
-                ⊥ 
-        If ¬c(a,d):
-          If c(a,e):
-            If c(a,f):
-              ⊥ 
-            If ¬c(a,f):
-              If c(a,g):
-                ⊥ 
-              If ¬c(a,g)
-                ⊥
-          If ¬c(a,e):
-            If c(a,f):
-              If c(a,g):
-                ⊥ 
-              If ¬c(a,g):
-                ⊥ 
-            If ¬c(a,f):
-              ⊥
-      If ¬c(a,b):
-        If c(a,d):
-          If c(a,e):
-            If c(a,f):
-              ⊥ 
-            If ¬c(a,f):
-              If c(a,g):
-                ⊥ 
-              If ¬c(a,g):
-                ⊥ 
-          If ¬c(a,e):
-            If c(a,f):
-              If c(a,g):
-                ⊥ 
-              If ¬c(a,g):
-                ⊥ 
-            If ¬c(a,f):
-              ⊥ 
-        If ¬c(a,d):
-          If c(a,e):
-            If c(a,f):
-              If c(a,g):
-                ⊥ 
-              If ¬c(a,g):
-                ⊥ 
-            If ¬c(a,f):
-              ⊥
-          If ¬c(a,e):
+          ⊥ 
+        ⊥
+    ∀ x,y,z ∈ V ( c(a,x) ∧ c(a,y) ∧ c(a,z) ∧ x ≠ y ∧ x ≠ z ∧ y ≠ z ∧ a ≠ x ∧ a ≠ y ∧ a ≠ z ⇒ ⊥ ) [3 black edges from a ⇒ ⊥ ]
+    ¬∃x,y,z,w,u ∈V ∀t∈V ( t = x ∨ t = y ∨ t = z ∨ t = u ⋁ t = w )
+    ∀x,y,z,w,u ∈V ∃t∈V ( t ≠ x ∧ t ≠ y ∧ t ≠ z ∧ t ≠ u ∧ t ≠ w )
+    ∃t∈V ( t ≠ a ∧ t ≠ a ∧ t ≠ a ∧ t ≠ a ∧ t ≠ a )
+    Let b ∈ V such that b ≠ a ∧ b ≠ a ∧ b ≠ a ∧ b ≠ a ∧ b ≠ a
+    b ≠ a
+    ∃t∈V ( t ≠ b ∧ t ≠ b ∧ t ≠ b ∧ t ≠ a ∧ t ≠ a )
+    Let d ∈V such that d ≠ b ∧ d ≠ b ∧ d ≠ b ∧ d ≠ a ∧ d ≠ a
+    d ≠ b ∧ d ≠ a
+    ∃t ∈ V ( t ≠ d ∧ t ≠ d ∧ t ≠ d ∧ t ≠ b ∧ t ≠ a )
+    Let e ∈ V such that e ≠ d ∧ e ≠ d ∧ e ≠ d ∧ e ≠ b ∧ e ≠ a
+    e ≠ d ∧ e ≠ b ∧ e ≠ a
+    ∃t∈V ( t ≠ e ∧ t ≠ e ∧ t ≠ d ∧ t ≠ b ∧ t ≠ a )
+    Let f ∈ V such that f ≠ e ∧ f ≠ e ∧ f ≠ d ∧ f ≠ b ∧ f ≠ a
+    ∃t∈V ( t ≠ f ∧ t ≠ e ∧ t ≠ d ∧ t ≠ b ∧ t ≠ a )
+    Let g ∈ V such that g ≠ f ∧ g ≠ e ∧ g ≠ d ∧ g ≠ b ∧ g ≠ a
+    g ≠ f ∧ g ≠ e ∧ g ≠ d ∧ g ≠ b ∧ g ≠ a ∧ f ≠ e ∧ f ≠ d ∧ f ≠ b ∧ f ≠ a ∧ e ≠ d ∧ e ≠ b ∧ e ≠ a ∧ d ≠ b ∧ d ≠ a ∧ b ≠ a @now
+    If c(a,b):
+      If c(a,d):
+        If c(a,e):
+          ⊥
+        If ¬c(a,e):
+          If c(a,f):
             ⊥ 
-      ⊥ 
-    ∀w∈V ∃x,y,z∈V ( c(x,y) ∧ c(y,z) ∧ c(z,x) ∧ x ≠ y ∧ y ≠ z ∧ z ≠ x ) ∨ ∃x,y,z,w,u ∈V ∀t∈V ( t = x ∨ t = y ∨ t = z ∨ t = u ⋁ t = w )
+          If ¬c(a,f):
+            If c(a,g):
+              ⊥ 
+            If ¬c(a,g):
+              ⊥ 
+      If ¬c(a,d):
+        If c(a,e):
+          If c(a,f):
+            ⊥ 
+          If ¬c(a,f):
+            If c(a,g):
+              ⊥ 
+            If ¬c(a,g)
+              ⊥
+        If ¬c(a,e):
+          If c(a,f):
+            If c(a,g):
+              ⊥ 
+            If ¬c(a,g):
+              ⊥ 
+          If ¬c(a,f):
+            ⊥
+    If ¬c(a,b):
+      If c(a,d):
+        If c(a,e):
+          If c(a,f):
+            ⊥ 
+          If ¬c(a,f):
+            If c(a,g):
+              ⊥ 
+            If ¬c(a,g):
+              ⊥ 
+        If ¬c(a,e):
+          If c(a,f):
+            If c(a,g):
+              ⊥ 
+            If ¬c(a,g):
+              ⊥ 
+          If ¬c(a,f):
+            ⊥ 
+      If ¬c(a,d):
+        If c(a,e):
+          If c(a,f):
+            If c(a,g):
+              ⊥ 
+            If ¬c(a,g):
+              ⊥ 
+          If ¬c(a,f):
+            ⊥
+        If ¬c(a,e):
+          ⊥ 
+    ⊥ 
+  ∀w∈V ∃x,y,z∈V ( c(x,y) ∧ c(y,z) ∧ c(z,x) ∧ x ≠ y ∧ y ≠ z ∧ z ≠ x ) ∨ ∃x,y,z,w,u ∈V ∀t∈V ( t = x ∨ t = y ∨ t = z ∨ t = u ⋁ t = w )
 Notes:
   Equivalently, if you do the entire proof by contradiction, then the conditions say that there is no triangle at all, and so you only need the two implications shown on the left in your diagrams. Applying both of them to some vertex a, either it has 3 red or 3 green edges and hence a contradiction.
   Note that in the subcontext where the conditions and negation of the conclusion hold, after picking some vertex a, your first implication can be expressed as a lemma of the form ∀x,y,z ( a,x,y,z are distinct and c(a,x),c(a,y),c(a,z) are all true ), and similarly your second implication is ∀x,y,z ( a,x,y,z are distinct and c(a,x),c(a,y),c(a,z) are all false ). So you can first prove these lemmas and then use them multiple times to reach a contradiction in the pure FOL proof.

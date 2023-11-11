@@ -1,4 +1,5 @@
 ¬∀x∈S ( P(x) ) ⇒ ∃x∈S(¬P(x))
+
 If ¬∀x∈S ( P(x) ):
   If ¬∃x∈S (¬P(x)):
     Given y∈S:

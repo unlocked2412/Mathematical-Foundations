@@ -1,3 +1,4 @@
+∀ x,y,z ∈ G ( x*(y*z) = (x*y)*z ) ∧ ∀ x,y ∈ G ( x *i(x) = y*i(y) ) ∧ ∀ x ∈ G ( x*(x*i(x)) = x ) ⇒ ∀ x,y ∈ G ( (i(y)*y)*x = x)
 First attempt:
   ∀ x,y,z ∈ G ( x*(y*z) = (x*y)*z ) ∧ ∀ x,y ∈ G ( x*i(x) = y*i(y) ) ∧ ∀ x ∈ G ( x*(x*i(x)) = x ) ⇒ ∀ x,y ∈ G ( (i(y)*y)*x = x), where (infix) * : G^2 -> G and i : G -> G.
     If ∀ x,y,z ∈ G ( x*(y*z) = (x*y)*z ) ∧ ∀ x,y ∈ G ( x *i(x) = y*i(y) ) ∧ ∀ x ∈ G ( x*(x*i(x)) = x ):

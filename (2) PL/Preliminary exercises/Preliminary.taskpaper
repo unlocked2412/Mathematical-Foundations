@@ -28,3 +28,22 @@ Exercises:
 --- Contradiction & Negation
 
 (9) A ⇒ (¬¬A)
+
+(10) 
+	If ( A ∨ B ) ∧ ¬A:
+		( A ∨ B ) ∧ ¬A.
+		A ∨ B.
+		¬A.
+		If A:
+			A.
+			¬A.
+			If ¬B:
+				A.
+				¬A.
+			¬¬B.
+			B.
+		If B:
+			B.
+		B.
+	( ( A ∨ B ) ∧ ¬A ) ⇒ B.
+

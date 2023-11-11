@@ -1,4 +1,5 @@
 ∀ x ∈ S ( f(f(f(x))) = f(f(x)) ) ∧ ∀ x ∈ S ∃ y ∈ S ( x = f(y) ) ⇒ ∀ x ∈ S ( f(x) = x ), where f : S -> S.
+
 If ∀ x ∈ S ( f(f(f(x))) = f(f(x)) ) ∧ ∀ x ∈ S ∃ y ∈ S ( x = f(y) ):
   ∀ x ∈ S ( f(f(f(x))) = f(f(x)) ) 
   ∀ x ∈ S ∃ y ∈ S ( x = f(y) )

@@ -1,4 +1,5 @@
 ∀ x, y, z ∈ S ( x = z ∧ y = z ⇒ x = y)
+
 Given x ∈ S:
   Given y ∈ S:
     Given z ∈ S:
