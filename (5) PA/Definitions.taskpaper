@@ -1,0 +1,80 @@
+[Induction] For any property P on ℕ, P(0) ∧ ∀k ∈ ℕ ( P(k) ⇒ P(k+1) ) ⇒ ∀k∈ℕ ( P(k) ).
+[Strong induction]  For any property P on ℕ, ∀k∈ℕ ( ∀i∈ℕ ( i<k ⇒ P(i) ) ⇒ P(k) ) ⇒ ∀k∈ℕ ( P(k) ).
+  Given P on ℕ:
+    Let Q(k) ≡ ∀i∈ℕ ( i<k ⇒ P(i) )
+    If  ∀k∈ℕ ( Q(k) ⇒ P(k) ): [Strong Induction Hypothesis]
+      [Prove Q(0) ≡ ∀i∈ℕ ( i<0 ⇒ P(i) )]
+      Given i ∈ ℕ:
+        If i < 0:
+          ⊥ 
+          P(i)
+      ∀i∈ℕ ( i<0 ⇒ P(i) )
+      Q(0)
+      [Prove ∀k ∈ ℕ ( Q(k) ⇒ Q(k+1) )]
+      Given k ∈ ℕ:
+        If Q(k):
+          [Prove ∀i ∈ ℕ ( i < k+1 ⇒ P(i) )]
+          Given i ∈ ℕ:
+            If i < k+1:
+              ∀ x,y ∈ ℕ ( x < y + 1 ⇒ x ≤ y ) [lemma]
+              i ≤ k
+              If i = k:
+                Q(k) ⇒ P(k)
+                P(k)
+                P(i)
+              If i < k:
+                ∀ i ∈ ℕ ( i < k ⇒ P(i) )
+                i < k ⇒ P(i)
+                P(i)
+              P(i)
+            i < k+1 ⇒ P(i) 
+          ∀i ∈ ℕ ( i < k+1 ⇒ P(i) )
+          Q(k+1)
+        Q(k) ⇒ Q(k+1) 
+      ∀k ∈ ℕ ( Q(k) ⇒ Q(k+1) )
+      Q(0) ∧ ∀k ∈ ℕ ( Q(k) ⇒ Q(k+1) ) ⇒ ∀k∈ℕ ( Q(k) ) [Induction]
+      Q(0) ∧ ∀k ∈ ℕ ( Q(k) ⇒ Q(k+1) ) 
+      ∀k∈ℕ ( Q(k) ) 
+      Given k ∈ ℕ:
+        Q(k) ⇒ P(k)
+        Q(k)
+        P(k)
+      ∀k∈ℕ ( P(k) )
+  For any property P on ℕ, ∀k∈ℕ ( ∀i∈ℕ ( i<k ⇒ P(i) ) ⇒ P(k) ) ⇒ ∀k∈ℕ ( P(k) )
+[Well-ordering] For any property P on ℕ, ∃k∈ℕ ( P(k) ) ⇒ ∃m∈ℕ ( P(m) ∧ ∀k∈ℕ ( P(k) ⇒ k≥m ) ).
+  Given P on ℕ:
+    [Prove Well-ordering from Strong Induction]
+    if exists k in N ( P(k) ):
+      if not exists m in N ( P(m) and forall k in N ( P(k) implies k>=m ) ):
+        given k in N:
+          if forall i in N ( i<k implies not P(i) ):
+            if P(k):
+              given j in N:
+                if P(j):
+                  j<k implies not P(j).
+                  if j<k:
+                    not P(j).
+                    false.
+                  j>=k.
+              P(k) and forall j in N ( P(j) implies j>=k ).
+              false.
+            not P(k).
+        forall k in N ( forall i in N ( i<k implies not P(i) ) implies not P(k) ).
+        forall k in N ( not P(k) ).
+        let c in N st P(c).
+        not P(c).
+        false.
+      exists m in N ( P(m) and forall k in N ( P(k) implies k>=m ) ).
+    ∃k∈ℕ ( P(k) ) ⇒ ∃m∈ℕ ( P(m) ∧ ∀k∈ℕ ( P(k) ⇒ k≥m ) )
+Hints: 
+  First derive strong induction. That is, for each property P on ℕ prove "∀k∈ℕ ( ∀i∈ℕ ( i<k ⇒ P(i) ) ⇒ P(k) ) ⇒ ∀k∈ℕ ( P(k) )" within PA. Next derive well-ordering from strong induction, by proving "¬∃m∈ℕ ( P(m) ∧ ∀k∈ℕ ( P(k) ⇒ k≥m ) ) ⇒ ∀k∈ℕ ( ¬P(k) )".
+  Searching for a proof of Well-ordering using the techinque 'more true':
+    I've told you this before: Before you try anything, you should in the first place write down what your desired goal is. What is it that you want to prove under "If ¬∃ m ∈ ℕ ( P(m) ∧ ∀ k ∈ ℕ ( P(k) ⇒ k ≥ m) ):"? Do you even believe that what you want to prove is true?
+    In particular, you say you want to prove "∀k∈ℕ ( ∀i∈ℕ ( i<k ⇒ P(i) ) ⇒ P(k) )", but if you do then by strong induction you would get "∀k∈ℕ ( P(k) )" under "If ¬∃ m ∈ ℕ ( P(m) ∧ ∀ k ∈ ℕ ( P(k) ⇒ k ≥ m) ):"? Do you even believe that it is true?
+    You used "∃k ∈ ℕ ( P(k) )" to generate a witness m such that P(m). That is the 'most true', along with "¬∃ m ∈ ℕ ( P(m) ∧ ∀ k ∈ ℕ ( P(k) ⇒ k ≥ m) )".
+    So the next 'most true' would be what you can get from them.
+    It's correct though, since "∀ k ∈ ℕ ( ¬P(k) )" it's the opposite of ∃k∈ℕ ( P(k) ).
+  After you're done with those two, you would have two powerful tools that are often easier to use than induction, even though they are logically equivalent to induction over PA−. Specifically, PA− plus induction can prove any sentence that PA− plus strong induction can prove, and any sentence that PA− plus well-ordering can prove.
+  The reason they are easier to use is that they enable getting more from less:
+    Induction requires you to prove P(0) and P(k+1) from P(k). Strong induction only requires you to prove P(k) from ∀i∈ℕ ( i<k ⇒ P(i) ).
+    Well-ordering allows you to get from "some k∈ℕ satisfies P" to "some minimum m∈ℕ satisfies P". It is as if you get something extra for free.

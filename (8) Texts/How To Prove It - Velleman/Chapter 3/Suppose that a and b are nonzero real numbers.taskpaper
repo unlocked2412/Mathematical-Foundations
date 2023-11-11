@@ -1,0 +1,84 @@
+Prove that if a < 1/a < b < 1/b then a < -1.
+  ∀x,y,z∈ℝ ( x≤y<z ⇒ x<z ) [lemma]
+    Given x,y,z ∈ ℝ:
+      If x≤y<z:
+        If x < y:
+          y < z
+          x < z
+        If x = y:
+          y < z
+          x < z
+        x<z
+    ∀x,y,z∈ℝ ( x≤y<z ⇒ x<z ) 
+  user21820 version:
+    Notes:
+      F.Zer user21820 Beautiful. You derived 1/b > 0 and multiplied both sides of 1 < b·a. The other steps are great. Although your proof is (much) shorter and neat, I am happy that I could (at least) come up with a proof :-)
+        Of course. The lesson to learn is just that you should squeeze as much as you can from as little as you can first.
+      You see, what I did was motivated by what I had. Already we are given −1 ≤ a < 1/a, so obviously I want to multiply by a, and to do that I need to know whether a < 0 or a > 0, so split case.
+      Once under a < 0, from −1 < 1/a we get −1·a > 1 and out pops ⊥.
+      And under a > 0, we cannot get a contradiction from just −1 ≤ a < 1/a (since you can see for yourself that there is some a > 0 that satisfies that), so try to squeeze the next inequality 1/a < b.
+      Obviously, again, multiply by a, yielding 1 < a·b. To get it related to the 1/b, we could divide by b, and we can because we know b > a > 0. Doing so yields 1/b < a, and out pops ⊥ again.
+    Given a,b∈ℝ[≠0]:
+      If a < 1/a < b < 1/b:
+        If a ≥ −1:
+          −1 ≤ a < 1/a.
+          a < 0 ∨ a > 0.
+          If a < 0:
+            −1·a > (1/a)·a = 1.
+            a < −1.
+            ⊥.
+          If a > 0:
+            (1/a)·a < b·a.
+            1 < b·a.
+            1/b > a > 0.
+            1·(1/b) < (b·a)·(1/b) = a.
+            1/b < a.
+            ⊥.
+          ⊥.
+        a < −1.
+  My version:
+    ∀ x,y ∈ ℝ ( x ≠ 0 ∧ y ≠ 0 ⇒ (x < 1/x < y < 1/y ⇒ x < –1 ) )
+      ∀ x,y ∈ ℝ ( x > 0 ∧ y > 0 ∧ x < y ⇒ 1/x > 1/y ) [lemma] @lemma
+      ∀x,y,z∈ℝ ( x<y≤z ⇒ x<z ) [lemma]
+      Given x,y ∈ ℝ: 
+        If x ≠ 0 ∧ y ≠ 0:
+          If x < 1/x < y < 1/y:
+            If x ≥ –1:
+              If x > 0:
+                If y ≤ 0:
+                  If y < 0:
+                    0 < x ∧ y < 0
+                    0·y > x·y
+                    x·y < 0
+                    -1 ≤ x < 1/x < y
+                    -x ≤ x·x < 1 < x·y
+                    x·y > 1
+                    ⊥ 
+                  ⊥
+                y > 0
+                x > 0 ∧ y > 0 ∧ x < y ⇒ 1/x > 1/y [lemma]
+                1/x > 1/y
+                1/x < 1/y
+                ⊥
+              If x < 0:
+                –1 ≤ x < 1/x < y < 1/y
+                –1 ≤ x
+                  -1 < x:
+                    -1(-1) < x·(-1)
+                    1 > -x
+                    1 ≥ -x
+                  -1 = x
+                    1 = -x
+                    1 ≥ -x
+                1 ≥ –x
+                1 ≥ –x ≥ x·x > 1 > x·y > x/y
+                1 > 1
+                ⊥
+                y < 0
+                x < 0 ∧ y < 0 ⇒ 1/x > 1/y [lemma]
+                1/x > 1/y
+                1/x < 1/y
+                ⊥
+              ⊥ 
+            x < -1
+      ∀ x,y ∈ ℝ ( x ≠ 0 ∧ y ≠ 0 ⇒ (x < 1/x < y < 1/y ⇒ x < –1 ) )

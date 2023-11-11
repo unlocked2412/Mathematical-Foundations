@@ -1,0 +1,22 @@
+[PA-3]
+	∀ k, m ∈ ℕ ( k < m ⇒ k+1 ≤ m ) [lemma]
+	∀ x,y,z ∈ ℕ ( x ≤ y ⇒ x·z ≤ y·z ) [lemma]
+	Given k,m ∈ ℕ:
+		If k·k < m·m:
+			If k ≥ m:
+				k·k ≥ m·k ≥ m·m
+				⊥
+			k < m
+	∀ k, m ∈ ℕ ( k·k < m·m ⇒ k < m ) [lemma]
+	Given k ∈ ℕ:
+		If ∃m,n∈ℕ ( 0 < k·k < m·m < n·n < k·k+3k+5 ):
+			Let a,b ∈ V such that 0 < k·k < a·a < b·b < k·k+3k+5
+			0 < k < a < b
+			a > k
+			b ≥ a+1 ≥ (k+1)+1 = k+2
+			b·b ≥ (k+2)·(k+2) = k·k+4+4·k ≥ k·k+4+3·k+k ≥ k·k+4+3·k+1 = k·k+3·k+5 [since k ≥ 1]
+			k·k+4·k+4 ≥ k·k+3·k+5
+			b·b ≥ k·k+3·k+5
+			⊥
+		¬∃m,n∈ℕ ( 0 < k·k < m·m < n·n < k·k+3k+5 )
+	∀k∈ℕ ¬∃m,n∈ℕ ( 0 < k·k < m·m < n·n < k·k+3k+5 )

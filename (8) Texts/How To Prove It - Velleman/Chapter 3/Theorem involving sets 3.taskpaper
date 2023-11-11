@@ -1,0 +1,10 @@
+Given A,B ∈ set:
+  Given a ∈ A:
+    If A ⊆ B ∧ a ∉ B ∖C:
+      a ∈ B
+      ¬a ∈ B ∖C
+      ¬ ( a ∈ B ∧ a ∉ C )
+      a ∉ B ∧ a ∈ C
+      a ∈ C
+    A ⊆ B ∧ a ∉ B ∖C ⇒ a ∈ C
+∀ A, B ∈ set ∀ a ∈ A ( A ⊆ B ∧ a ∉ B ∖C ⇒ a ∈ C )

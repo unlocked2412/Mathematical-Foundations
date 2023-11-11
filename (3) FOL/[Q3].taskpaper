@@ -1,0 +1,22 @@
+∃ x ∈ S (x ∈ S) ⇒ ∃ x ∈ S( P(x) ⇒ ∀ y ∈ S( P(y) ) )
+  If ∃ x ∈ S (x ∈ S):
+    If ¬ ∃ x ∈ S( P(x) ⇒ ∀ y ∈ S( P(y)):
+      Let a ∈ S such that a ∈ S
+      If P(a):
+        Given b ∈ S
+          If ¬P(b):
+            If P(b):
+              ⊥ 
+              ∀ y ∈ S (P(y))
+            P(b) ⇒ ∀ y ∈ S (P(y))
+            b ∈ S
+            ∃ x ∈ S( P(x) ⇒ ∀ y ∈ S( P(y))
+            ⊥ 
+          P(b)
+        ∀ b ∈ S(P(b))
+        ∀ y ∈ S(P(y))
+      P(a) ⇒ ∀ y ∈ S(P(y))
+      ∃ x ∈ S( P(x) ⇒ ∀ y ∈ S( P(y))
+      ⊥ 
+    ∃ x ∈ S( P(x) ⇒ ∀ y ∈ S( P(y))
+  ∃ x ∈ S (x ∈ S) ⇒ ∃ x ∈ S( P(x) ⇒ ∀ y ∈ S( P(y) ) )

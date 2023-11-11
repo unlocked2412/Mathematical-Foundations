@@ -1,0 +1,112 @@
+Contents:
+	∀ x, y, z ∈ ℕ ( x + y = x + z ⇒ y = z ) [lemma]
+	∀ x ∈ ℕ ( x·0 = 0 ) [lemma]
+	∀x,y∈ℕ ( x≤y ⇒ ∃z∈ℕ ( x+z = y ) ) [lemma]
+	∀x,y,z∈ℕ ( x<y≤z ⇒ x<z ) [lemma]
+	∀x,y,z∈ℕ ( x≤y<z ⇒ x<z ) [lemma]
+	∀x,y,z∈ℕ ( x ≤ y ⇒ x + z ≤ y + z ) [lemma]
+	∀ x, y, z ∈ ℕ ( x ≤ y ⇒ x · z ≤ y · z ) [lemma]
+	∀x,y∈ℕ ( x≤y ⇒ ∃z∈ℕ ( x+z = y ) ) [lemma]
+	∀ k,m ∈ ℕ ( k < m ⇒ k+1 ≤ m) [discreteness]
+	
+∀ x, y, z ∈ ℕ ( x + y = x + z ⇒ y = z ) [lemma]
+	Given x ∈ ℕ:
+		Given y ∈ ℕ:
+			Given z ∈ ℕ:
+				If x + y = x + z:
+					If y = z:
+						y = z
+					If y < z:
+						x + y < x + z
+						x + y < x + y
+						¬ x + y < x + y
+						⊥ 
+						y = z
+					If z < y:
+						x + z < x + y
+						x + z < x + z
+						¬ x + z < x + z
+						⊥ 
+						z = y
+						y = z
+				y = z
+	∀ x, y, z ∈ ℕ ( x + y = x + z ⇒ y = z )
+∀ x ∈ ℕ ( x·0 = 0 ) [lemma]
+	Given a ∈ ℕ:
+		a · 1 = a
+		a · ( 1 + 0 ) = a
+		a · 1 + a · 0 = a
+		a · 1 + a · 0 = a + 0
+		a + a · 0 = a + 0
+		∀ x, y, z ∈ ℕ ( x + y = x + z ⇒ y = z )
+		a + a · 0 = a + 0 ⇒ a · 0 = 0
+		a · 0 = 0
+	∀ a ∈ ℕ ( a · 0 = 0 )
+	∀ x ∈ ℕ ( x·0 = 0 )
+∀x,y∈ℕ ( x≤y ⇒ ∃z∈ℕ ( x+z = y ) ) [lemma]
+	Given x, y ∈ ℕ:
+		If x ≤ y:
+			If x < y:
+				∀x,y∈ℕ ( x < y ⇒ ∃z∈ℕ ( x+z = y ) )
+				∃z∈ℕ ( x+z = y )
+			If x = y:
+				∀ x ∈ ℕ ( x + 0 = x )
+				x + 0 = x
+				x + 0 = y
+				∃z∈ℕ ( x+z = y )
+			∃z∈ℕ ( x+z = y )
+	∀x,y∈ℕ ( x≤y ⇒ ∃z∈ℕ ( x+z = y ) )
+∀x,y,z∈ℕ ( x<y≤z ⇒ x<z ) [lemma]
+∀x,y,z∈ℕ ( x≤y<z ⇒ x<z ) [lemma]
+∀x,y,z∈ℕ ( x ≤ y ⇒ x + z ≤ y + z ) [lemma]
+∀ x, y, z ∈ ℕ ( x ≤ y ⇒ x · z ≤ y · z ) [lemma]
+	Given x ∈ ℕ:
+		Given y ∈ ℕ:
+			Given z ∈ ℕ:
+				If x ≤ y:
+					If x = y:
+						x · z = x · z
+						x · z = y · z
+						x · z ≤ y · z
+					If x < y:
+						If z ≥ 1:
+							x · z < y · z
+							x · z ≤ y · z
+						If z = 0:
+							x · 0 = y · 0
+							x · z = y · z
+							x · z ≤ y · z
+						x · z ≤ y · z
+					x · z ≤ y · z
+	∀ x, y, z ∈ ℕ ( x ≤ y ⇒ x · z ≤ y · z )
+∀x,y∈ℕ ( x≤y ⇒ ∃z∈ℕ ( x+z = y ) ) [lemma]
+	Given x, y ∈ ℕ:
+		If x ≤ y:
+			If x < y:
+				∀x,y∈ℕ ( x < y ⇒ ∃z∈ℕ ( x+z = y ) )
+				∃z∈ℕ ( x+z = y )
+			If x = y:
+				∀ x ∈ ℕ ( x + 0 = x )
+				x + 0 = x
+				x + 0 = y
+				∃z∈ℕ ( x+z = y )
+			∃z∈ℕ ( x+z = y )
+	∀x,y∈ℕ ( x≤y ⇒ ∃z∈ℕ ( x+z = y ) )
+∀k,m ∈ ℕ ( k < m ⇒ k+1 ≤ m) [discreteness]
+	Given k ∈ ℕ:
+		If k < m:
+			∃z ∈ ℕ ( k+z = m )
+			k+z' = m
+			If 0 = z':
+				k = m
+				m < m
+				⊥
+			If 1 = z':
+				k+1 = m
+				k+1 ≤ m
+			If 1 < z':
+				k+1 < k+z'
+				k+1 < m
+				k+1 ≤ m
+			k+1 ≤ m
+	∀ k,m ∈ ℕ ( k < m ⇒ k+1 ≤ m)

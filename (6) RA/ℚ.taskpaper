@@ -1,0 +1,58 @@
+Prove ¬∃x∈ℚ ( x·x = 2 ) by using (PA4):
+  ¬∃x∈ℚ ( x·x = 2 )
+    If ∃x∈ℚ ( x·x = 2 ):
+      Let a ∈ ℚ such that a·a = 2
+      ∀x∈ℚ ∃p,q∈ℤ ( q > 0 ∧ p = q·x ) [ℚ = ℤ/ℤ+]
+        Given x ∈ ℚ:
+          Let p', q' ∈ ℤ such that q' ≠ 0 ∧ p' = q'·x [ℚ = ℤ/ℤ*]
+          If q' ∈ ℕ:
+            q' ≥ 0
+            q' > 0
+            q' > 0 ∧ p' = q'·x
+            ∃p,q∈ℤ ( q > 0 ∧ p = q·x )
+          If –q ∈ ℕ:
+            (–1)·p' = (–1)·q'·x
+            –q' > 0 ∧ –p' = –q'·x
+            ∃p,q∈ℤ ( q > 0 ∧ p = q·x )
+          ∃p,q∈ℤ ( q > 0 ∧ p = q·x )
+        ∀x∈ℚ ∃p,q∈ℤ ( q > 0 ∧ p = q·x )
+      ∃p,q∈ℤ ( q > 0 ∧ p = q·a )
+      Let p',q' ∈ ℤ such that q' > 0 ∧ p' = q'·a
+      p' ∈ ℕ ∨ –p' ∈ ℕ [ℤ=ℕ⋃−ℕ]
+      q' ∈ ℕ ∨ –q' ∈ ℕ [ℤ=ℕ⋃−ℕ]
+      If q' ∈ ℕ:
+        q' ∈ ℕ 
+      If –q' ∈ ℕ:
+        –q' ≥ 0
+        q'+(–q') ≥ q'
+        q' ≤ 0
+        q' > 0
+        q' ≤ 0 < q'
+        ⊥ 
+        q' ∈ ℕ 
+      q' ∈ ℕ
+      p',q' ∈ ℤ
+      p' = q'·a
+      q'·q'·a·a = q'·q'·2
+      q'·a·q'·a = q'·q'·2
+      p'·p' = q'·q'·2
+      If p' ∈ ℕ:
+        p' ∈ ℕ ∧ q' ∈ ℕ
+        p'·p' = q'·q'·2
+        ∃k∈ℕ ( k·k = q'·q'·2 )
+      If –p' ∈ ℕ:
+        –p' ∈ ℕ ∧ q' ∈ ℕ
+        (–1)·(–1)·p'·p' = (–1)·(–1)·q'·q'·2
+        (–p')·(–p') = q'·q'·2
+        ∃k∈ℕ ( k·k = q'·q'·2 )
+      ∃k∈ℕ ( k·k = q'·q'·2 )
+      Let c ∈ ℕ such that c·c = q'·q'·2
+      c ∈ ℕ ∧ q' ∈ ℕ
+      ∀k,m∈ℕ ( k·k = m·m·2 ⇒ k = 0 ) [PA4]
+      c·c = q'·q'·2 ⇒ c = 0
+      c = 0
+      0 = q'·q'·2
+      (1/q)·(1/q)·0 = (1/q)·(1/q)·q'·q'·2
+      0 = 2
+      ⊥ 
+    ¬∃x∈ℚ ( x·x = 2 ) 

@@ -1,0 +1,45 @@
+∀ y ∈ T ( f(g(y)) = y ) ∧ ∀ x ∈ S ∃ y ∈ T ( g(y) = x ) ⇒ ∀ x,y ∈ S (f(x) = f(y) ⇒ x = y), where f : S -> T and g : T -> S
+Version 1:
+  If ∀ y ∈ T ( f(g(y)) = y ) ∧ ∀ x ∈ S ∃ y ∈ T ( g(y) = x ):
+    ∀ y ∈ T ( f(g(y)) = y )
+    ∀ x ∈ S ∃ y ∈ T ( g(y) = x )
+    Given a ∈ S:
+      Given b ∈ S:
+        If f(a) = f(b):
+          ∃ y ∈ T ( g(y) = a )
+          ∃ y ∈ T ( g(y) = b )
+          Let a' ∈ T such that g(a') = a
+          Let b' ∈ T such that g(b') = b
+          g(a') = a
+          g(b') = b
+          f(g(a')) = a'
+          f(g(b')) = b'
+          f(a) = a'
+          f(b) = b'
+          g(f(a)) = a
+          g(f(b)) = b
+          g(f(a)) = b
+          a = b
+        f(a) = f(b) ⇒ a = b
+      ∀ b ∈ S ( f(a) = f(b) ⇒ a = b )
+    ∀ a ∈ S ∀ b ∈ S ( f(a) = f(b) ⇒ a = b )
+    ∀ x,y ∈ S (f(x) = f(y) ⇒ x = y),
+  ∀ y ∈ T ( f(g(y)) = y ) ∧ ∀ x ∈ S ∃ y ∈ T ( g(y) = x ) ⇒ ∀ x,y ∈ S (f(x) = f(y) ⇒ x = y)
+Version 2:
+  If ∀ y ∈ T ( f(g(y)) = y ) ∧ ∀ x ∈ S ∃ y ∈ T ( g(y) = x ):
+    ∀ y ∈ T ( f(g(y)) = y )
+    ∀ x ∈ S ∃ y ∈ T ( g(y) = x )
+    Given s,s' ∈ S:
+      If f(s) = f(s'):
+        ∃ y ∈ T ( g(y) = s )
+        ∃ y ∈ T ( g(y) = s' )
+        Let t ∈ T such that g(t) = s
+        Let t' ∈ T such that g(t') = s'
+        f(g(t)) = f(g(t'))
+        f(g(t')) = t'
+        s = g(t) = g(f(g(t))) = g(f(g(t'))) = g(t') = s'
+        s = s' 
+      f(s) = f(s') ⇒ s = s' 
+    ∀ s,s' ∈ S ( f(s) = f(s') ⇒ s = s' )
+    ∀ x,y ∈ S (f(x) = f(y) ⇒ x = y)
+  ∀ y ∈ T ( f(g(y)) = y ) ∧ ∀ x ∈ S ∃ y ∈ T ( g(y) = x ) ⇒ ∀ x,y ∈ S (f(x) = f(y) ⇒ x = y)

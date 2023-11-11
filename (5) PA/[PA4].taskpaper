@@ -1,0 +1,134 @@
+[Prove ∀k,m∈ℕ ( k·k = m·m·2 ⇒ k = 0 )]
+Define P(n) ≡ ∀ m ∈ ℕ ( n^2 = 2m^2 ⇒ n = 0 )
+Given k ∈ ℕ:
+  If ∀ i ∈ ℕ ( i < k ⇒ P(i) ):
+    [Prove P(k) ]
+    Given m' ∈ ℕ:
+      If k^2 = 2m'^2:
+        If k > 0:
+          ∀ x ∈ ℕ ( Even(x^2) ⇒ Even(x) ) [lemma]
+            Define Even(x) ≡ ∃ y ∈ ℕ ( x = 2·y )
+            Define Odd(x) ≡ ∃ y ∈ ℕ ( x = 2·y + 1 )
+            Given x ∈ ℕ:
+              If Even(x^2)
+                Let d ∈ ℕ such that x^2 = 2·d
+                ∀k∈ℕ ∃m∈ℕ ( k = m·2 ∨ k = m·2+1 ) [PA1]
+                ∀k∈ℕ ( Even(k) ⋁ Odd(k) ) [lemma]
+                  Given k ∈ ℕ:
+                    ∀k∈ℕ ∃m∈ℕ ( k = m·2 ∨ k = m·2+1 ) [PA1]
+                    ∃m∈ℕ ( k = m·2 ∨ k = m·2+1 )
+                    Let m' ∈ ℕ such that k = m'·2 ⋁ k = m'·2+1
+                    If k = m'·2:
+                      ∃ y ∈ ℕ ( k = 2·y )
+                      Even(k)
+                      Even(k) ⋁ Odd(k)
+                    If k = m'·2+1:
+                      Odd(k)
+                      Even(k) ⋁ Odd(k)
+                    Even(k) ⋁ Odd(k)
+                  ∀k∈ℕ ( Even(k) ⋁ Odd(k) )
+                Even(x) ⋁ Odd(x)
+                If ¬Even(x):
+                  Odd(x)
+                  ∃ y ∈ ℕ ( x = 2·y + 1 )
+                  Let c ∈ ℕ such that x = 2·c+1
+                  (2·c+1)·(2·c+1) = 2·d
+                  (2·c)^2+4·c+1 = 2·d
+                  2·(2c^2 + 2·c)+1 = 2·d
+                  ∀k,m∈ℕ ( k·2 ≠ m·2+1 ) [lemma]
+                    Given k,m ∈ ℕ:
+                      If k·2 = m·2+1:
+                        If k < m:
+                          2·k < 2·m
+                          2·m + 1 < 2·m
+                          2·m < 2·m + 1
+                          2·m + 1 < 2·m + 1
+                          ⊥
+                        If k = m:
+                          2·k = 2·k + 1
+                          2·k < 2·k + 1
+                          2·k < 2·k
+                          ⊥ 
+                        If m < k:
+                          ∀ k,m ∈ ℕ ( k < m ⇒ k + 1 ≤ m ) [lemma]
+                          m + 1 ≤ k 
+                          If m + 1 = k:
+                            2·(m+1) = 2·m + 1
+                            2·m + 1 < 2·(m+1)
+                            2·m + 1 < 2·m + 1
+                            ⊥
+                          If m + 1 < k
+                            2·(m+1) < 2·k
+                            2·(m+1) < 2·m + 1
+                            2·m + 1 < 2·(m+1)
+                            2·m + 1 < 2·m + 1
+                            ⊥
+                        ⊥ 
+                      k·2 ≠ m·2+1
+                    ∀k,m∈ℕ ( k·2 ≠ m·2+1 )
+                      
+                        
+                  2·(2c^2 + 2·c)+1 ≠ 2·d
+                  ⊥
+                Even(x)
+            ∀ x ∈ ℕ ( Even(x^2) ⇒ Even(x) )
+          Even(k)
+          Let c ∈ ℕ such that k = 2c
+          c > 0
+          (2c)^2 = 2m'^2
+          4c^2 = 2m'^2
+          2·(2·c^2) = 2·m'^2
+          ∀ x,y,c ∈ ℕ ( c·x = c·y ∧ c > 0 ⇒ x = y ) [lemma]
+            Given x,y,c ∈ ℕ:
+              If c·x = c·y ∧ c > 0:
+                x < y ⋁ y < x ⋁ x = y
+                If ¬ ( x = y ):
+                  x < y ⋁ y < x
+                  If x < y:
+                    c·x < c·y
+                    c·x < c·x
+                    ⊥ 
+                  If y < x:
+                    c·y < c·x
+                    c·y < c·y
+                    ⊥ 
+                  ⊥ 
+                x = y
+            ∀ x,y,c ∈ ℕ ( c·x = c·y ∧ c > 0 ⇒ x = y )
+          2c^2 = m'^2
+          ∀ k,m ∈ ℕ ( k^2 = 2m^2 ∧ k > 0 ⇒ m < k ) [lemma]
+            Given k,m ∈ ℕ:
+              If k^2 = 2m^2 ∧ k > 0:
+                If m ≥ k:
+                  m > 0.
+                  m^2 > 0.
+                  k^2 = 2·m^2 = m^2 + m^2 > m^2 ≥ k^2.
+                  ⊥
+                m < k
+            ∀ k,m ∈ ℕ ( k^2 = 2m^2 ∧ k > 0 ⇒ m < k )
+          m' < k
+          m' < k ⇒ P(m')
+          P(m')
+          ∀ m ∈ ℕ ( m'^2 = 2m^2 ⇒ m' = 0 )
+          m'^2 = 2c^2 ⇒ m' = 0
+          m' = 0
+          k^2 = 2 · 0 = 0
+          k > 0
+          k^2 > k·0
+          k^2 = 0
+          0 > k·0 = 0
+          ⊥
+        If k = 0:
+          k = 0
+        If k < 0:
+          ⊥ 
+          k = 0
+        k = 0
+      k^2 = 2m'^2 ⇒ k = 0
+    ∀ m' ∈ ℕ ( k^2 = 2m'^2 ⇒ n = 0 )
+    ∀ m ∈ ℕ ( k^2 = 2m^2 ⇒ n = 0 )
+    P(k)
+  ∀ i ∈ ℕ ( i < k ⇒ P(i) ) ⇒ P(k)
+∀ k ∈ ℕ ( ∀ i ∈ ℕ ( i < k ⇒ P(i) ) ⇒ P(k) )
+∀ k ∈ ℕ ( ∀ i ∈ ℕ ( i < k ⇒ P(i) ) ⇒ P(k) ) ⇒ ∀ k ∈ ℕ ( P(k) ) [Strong induction]
+∀ k ∈ ℕ ( P(k) )

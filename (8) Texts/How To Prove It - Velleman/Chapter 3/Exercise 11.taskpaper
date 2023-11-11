@@ -1,0 +1,16 @@
+Given a,b,c,d ∈ ℕ:
+  If 0 < a < b ∧ d > 0:
+    If a·c ≥ b·d:
+      a < b
+      a < b ∧ 0 < d
+      ∀ x,y,z ∈ ℕ ( x < y ⇒ x·z < y·z )
+      a·d < b·d
+      b·d ≤ a·c
+      a·d < b·d ≤ a·c
+      ∀x,y,z∈ℕ ( x<y≤z ⇒ x<z ) [lemma]
+      a·d < a·c
+      ∀k,x,y∈ℕ ( k·x > k·y ⇒ x > y ) [lemma]
+      c > d
+    ( a·c ≥ b·d ⇒ c > d )
+  0 < a < b ∧ d > 0 ⇒ ( a·c ≥ b·d ⇒ c > d )
+∀ a,b,c,d ∈ ℕ ( 0 < a < b ∧ d > 0 ⇒ ( a·c ≥ b·d ⇒ c > d ) )

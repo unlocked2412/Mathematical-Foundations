@@ -1,0 +1,60 @@
+∀ x,y,z ∈ B ( p(x) = p(y) ∧ p(y) = p(z) ⇒ x = y ⋁ y = z ⋁ z = x ) ⇒ ∀ x ∈ B ∃ y,z ∈ B ∀ w ∈ B ( p(w) = x ⇒ w = y ⋁ w = z ), where p : B -> B.
+If ∀ x,y,z ∈ B ( p(x) = p(y) ∧ p(y) = p(z) ⇒ x = y ⋁ y = z ⋁ z = x ):
+  Given a ∈ B:
+    ∃y,z ∈ B ( p(y) = a ∧ p(x) = a ∧ y ≠ z ) ⋁ ¬∃y,z ∈ B ( p(y) = a ∧ p(z) = a ∧ y ≠ z ) [LEM]
+    If ∃y,z ∈ B ( p(y) = a ∧ p(z) = a ∧ y ≠ z ):
+      Let b, c ∈ B such that p(b) = a ∧ p(c) = a ∧ b ≠ c
+      p(b) = a ∧ p(c) = a ∧ b ≠ c
+      Given d ∈ B:
+        If p(d) = a:
+          p(b) = a
+          p(c) = a
+          p(b) = p(c)
+          p(c) = p(d)
+          p(b) = p(c) ∧ p(c) = p(d)
+          p(b) = p(c) ∧ p(c) = p(d) ⇒ b = c ⋁ c = d ⋁ d = b
+          b = c ⋁ c = d ⋁ d = b
+          If b = c:
+            b ≠ c
+            ⊥ 
+            d = b ⋁ d = c
+          If c = d:
+            d = b ⋁ d = c
+          If d = b:
+            d = b ⋁ d = c
+        p(d) = a ⇒ d = b ⋁ d = c
+      ∀ d ∈ B ( p(d) = a ⇒ d = b ⋁ d = c )
+      ∀ w ∈ B ( p(w) = a ⇒ w = b ⋁ w = c )
+      ∃ y,z ∈ B ∀ w ∈ B ( p(w) = a ⇒ w = y ⋁ w = z )
+    If ¬∃y,z ∈ B ( p(y) = a ∧ p(z) = a ∧ y ≠ z ):
+      ∃ y ∈ B( p(y) = a ) ⋁ ¬∃ y ∈ B( p(y) = a ) [LEM]
+      If ∃ y ∈ B( p(y) = a ):
+        Let b ∈ B such that p(b) = a
+        Given d ∈ B:
+          If p(d) = a:
+            p(b) = a ∧ p(d) = a
+            If b ≠ d:
+              p(b) = a ∧ p(d) = a
+              ∃y,z ∈ B ( p(y) = a ∧ p(z) = a ∧ y ≠ z )
+              ⊥ 
+            b = d
+            d = b ⋁ d = b
+          p(d) = a ⇒ d = b ⋁ d = b
+        ∀ d ∈ B ( p(d) = a ⇒ d = b ⋁ d = b )
+        ∀ w ∈ B ( p(w) = a ⇒ w = b ⋁ w = b )
+        ∃ y,z ∈ B ∀ w ∈ B ( p(w) = a ⇒ w = y ⋁ w = z )
+      If ¬∃ y ∈ B( p(y) = a ):
+        Given d ∈ B:
+          If p(d) = a:
+            ∃ y ∈ B ( p(y) = a )
+            ⊥ 
+            d = a
+            d = a ⋁ d = a
+          p(d) = a ⇒ d = a ⋁ d = a
+        ∀ d ∈ B ( p(d) = a ⇒ d = a ⋁ d = a )
+        ∀ w ∈ B ( p(w) = a ⇒ w = a ⋁ w = a )
+        ∃ y,z ∈ B ∀ w ∈ B ( p(w) = a ⇒ w = y ⋁ w = z )
+      ∃ y,z ∈ B ∀ w ∈ B ( p(w) = a ⇒ w = y ⋁ w = z )
+    ∃ y,z ∈ B ∀ w ∈ B ( p(w) = a ⇒ w = y ⋁ w = z )
+  ∀ x ∈ B ∃ y,z ∈ B ∀ w ∈ B ( p(w) = x ⇒ w = y ⋁ w = z )
+∀ x,y,z ∈ B ( p(x) = p(y) ∧ p(y) = p(z) ⇒ x = y ⋁ y = z ⋁ z = x ) ⇒ ∀ x ∈ B ∃ y,z ∈ B ∀ w ∈ B ( p(w) = x ⇒ w = y ⋁ w = z )

@@ -1,0 +1,37 @@
+For any property P on ℕ, we can prove:
+	Define Q(k) ≡ ∀i∈ℕ ( i<k ⇒ P(i) )
+	If ∀ k ∈ ℕ ( Q(k) ⇒ P(k) ):
+		[Show ∀ k ∈ ℕ ( Q(k) ) with induction]
+		Given i ∈ ℕ:
+			If i < 0:
+				⊥
+				P(i)
+		∀i∈ℕ ( i<0 ⇒ P(i) )
+		Q(0)
+		Given k ∈ ℕ:
+			If Q(k):
+				[Show ∀i∈ℕ ( i<k+1 ⇒ P(i) )]
+				Given i ∈ ℕ:
+					If i<k+1:
+						i+1 ≤ k+1 [discreteness]
+						i ≤ k [cancellation]
+						If i < k:
+							∀i∈ℕ ( i<k ⇒ P(i) )
+							i<k ⇒ P(i)
+							P(i)
+						If i = k:
+							Q(k) ⇒ P(k)
+							P(k)
+							P(i)
+						P(i)
+				Q(k+1)
+		∀ k ∈ ℕ ( Q(k) ⇒ Q(k+1) )
+		Q(0) ∧ ∀ k ∈ ℕ ( Q(k) ⇒ Q(k+1) )
+		∀ k ∈ ℕ ( Q(k) ) 
+		Given k ∈ ℕ:
+			Q(k) ⇒ P(k)
+			Q(k)
+			P(k)
+		∀ k ∈ ℕ ( P(k) )
+	∀ k ∈ ℕ ( Q(k) ⇒ P(k) ) ⇒ ∀ k ∈ ℕ ( P(k) )
+For any property P on ℕ, ∀k∈ℕ ( ∀i∈ℕ ( i<k ⇒ P(i) ) ⇒ P(k) ) ⇒ ∀k∈ℕ ( P(k) ). [Strong induction]

@@ -1,0 +1,6 @@
+Given k ∈ ℕ:
+	If k < m:
+		k+1 ≤ m [discreteness]
+		m·2 ≥ (k+1)·2 = k·2+1+1 > k·2+1 [lemma]
+		m·2 > k·2+1 [lemma]
+∀ k,m ∈ ℕ ( k < m ⇒ k·2+1 < m·2 )

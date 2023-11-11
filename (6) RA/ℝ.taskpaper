@@ -1,0 +1,246 @@
+Lemmas:
+  ℝ ⊢ ∀x,y∈ℝ ∀z∈ℝ[≠0] ( x·(y/z) = (x·y)/z ) [lemma]
+    Given x,y ∈ ℝ:
+      Given z ∈ ℝ[≠0]:
+        ∀x∈ℝ ∀y∈ℝ[≠0] ( x = y·(x/y) )
+        x·y = z·((x·y)/z)
+        y = z·(y/z)
+        x·y = x·z·(y/z) = z·x·(y/z) = z·(x·(y/z))
+        z·(x·(y/z)) = z·((x·y)/z)
+        (1/z)·z·(x·(y/z)) = (1/z)·z·((x·y)/z)
+        z·(1/z)·(x·(y/z)) = z·(1/z)·((x·y)/z)
+        x·(y/z)) = (x·y)/z
+      ∀z∈ℝ[≠0] ( x·(y/z) = (x·y)/z )
+    ∀x,y∈ℝ ∀z∈ℝ[≠0] ( x·(y/z) = (x·y)/z )
+  ℝ ⊢ ∀ x,y ∈ ℝ ( x < y ⇒ -x > -y )
+    Given x,y ∈ ℝ:
+      If x < y:
+        If -x ≤ -y:
+          x+(-x) ≤ x-y
+          x+(-x) + y ≤ (x-y)+y
+          y ≤ x
+          ⊥ 
+        -x > -y
+    ∀ x,y ∈ ℝ ( x < y ⇒ -x > -y )
+  ℝ ⊢ ∀ x,y,c ∈ ℝ ( c·x = c·y ∧ c ≠ 0 ⇒ x = y )
+    Given x,y,c ∈ ℝ:
+      If c·x = c·y ∧ c ≠ 0:
+        x < y ⋁ y < x ⋁ x = y
+        c > 0 ∨ c < 0
+        If ¬ ( x = y ):
+          x < y ⋁ y < x
+          If x < y:
+            If c > 0:
+              c·x < c·y
+              c·x < c·x
+              ⊥ 
+            If c < 0:
+              x < y ∧ c < 0 ⇒ x·c > y·c [lemma]
+              c·x > c·y
+              c·x > c·x
+              ⊥ 
+          If y < x:
+            If c > 0:
+              c·y < c·x
+              c·y < c·y
+              ⊥ 
+            If c < 0:
+              y < x ∧ c < 0 ⇒ y·c > x·c [lemma]
+              c·y > c·x
+              c·y > c·y
+              ⊥
+          ⊥ 
+        x = y
+    ∀ x,y,c ∈ ℕ ( c·x = c·y ∧ c ≠ 0 ⇒ x = y )
+  ℝ ⊢ ∀ x,y,z ∈ ℝ ( x < y ∧ z < 0 ⇒ x·z > y·z ) [lemma]
+    Given x,y ∈ ℝ:
+      If x < y ∧ z < 0:
+        -z > 0
+        x·(-z) < y·(-z)
+        x·z+x·(-z) < x·z+y·(-z)
+        x·(z+(-z)) < x·z+y·(-z)
+        x·0 < x·z+y·(-z)
+        0 < x·z+y·(-z)
+        y·z < x·z+y·(-z)+y·z
+        y·z < x·z+y·((-z)+z)
+        y·z < x·z+y·0
+        y·z < x·z
+        x·z > y·z
+    ∀ x,y,z ∈ ℝ ( x < y ∧ z < 0 ⇒ x·z > y·z )
+Exercises:
+  ℝ ⊢ ∀x∈ℝ ( x/1 = x ).
+    Given x ∈ ℝ:
+      ∀y∈ℝ[≠0] ( x = y·(x/y) )
+      1 ∈ ℕ ⇒ 1 ∈ ℤ
+      1 ∈ ℤ ⇒ 1 ∈ ℚ
+      1 ∈ ℚ ⇒ 1 ∈ ℝ
+      1 ∈ ℝ ∧ 1 ≠ 0
+      1 ∈ ℝ[≠0] 
+      x = 1·(x/1)
+      ∀ x ∈ ℝ ( x·1 = x )
+      (x/1)·1 = x/1
+      x = x/1
+      x/1 = x
+    ∀x∈ℝ ( x/1 = x )
+  ℝ ⊢ ∀x,z∈ℝ ∀y,w∈ℝ[≠0] ( (x/y)·(z/w) = (x·z)/(y·w) ).
+    ∀x,y∈ℝ ∀z∈ℝ[≠0] ( x·(y/z) = (x·y)/z ) [lemma]
+    Given x,z ∈ ℝ:
+      Given y,w ∈ ℝ[≠ 0]:
+        (x/y)·(z/w)·y·w = y·(x/y)·w·(z/w) = x·z
+        (1/(y·w))·(x/y)·(z/w)·y·w = (x·z)·(1/(y·w))
+        (y·w)·(1/(y·w))·(x/y)·(z/w) = (x·z)·(1/(y·w))
+        ∀x',y'∈ℝ ∀z'∈ℝ[≠0] ( x'·(y'/z') = (x'·y')/z' ) [lemma]
+        (x·z)·(1/(y·w)) = ((x·z)·1)/(y·w) = (x·z)/(y·w)
+        (x/y)·(z/w) = (x·z)/(y·w)
+    ∀x,z∈ℝ ∀y,w∈ℝ[≠0] ( (x/y)·(z/w) = (x·z)/(y·w) )
+  ℝ ⊢ ∀x,y∈ℝ[≠0] ( 1/(x/y) = y/x ).
+    ∀x,y∈ℝ ∀z∈ℝ[≠0] ( x·(y/z) = (x·y)/z ) [lemma]
+    Given x,y ∈ ℝ[≠ 0]: 
+      y/y = 1·(y/y) = (1·y)/y = (y·1)/y = y·(1/y) = 1
+      (y/x)·(x/y) = ((y/x)·x)/y) = (x·(y/x))/y = y/y = 1
+      1/(x/y) = (x/y)·(y/x)/(x/y) = y/x
+    ∀x,y∈ℝ[≠0] ( 1/(x/y) = y/x )
+  ℝ ⊢ ∀ x ∈ ℝ ( x·0 = 0 ).
+    Given x ∈ ℝ:
+      x·0 = x·(0 + 0) = x·0 + x·0
+      x·0 + x·0 = x·0
+      x·0 + x·0 + (-x·0) = x·0 + (-x·0) 
+      x·0+(−x·0) = 0
+      x·0 = 0
+    ∀ x ∈ ℝ ( x·0 = 0 )
+  ℝ ⊢ ∀x∈ℝ[≠0] ( x·x > 0 ).
+    ∀ x,y,z ∈ ℝ ( x < y ∧ z < 0 ⇒ x·z > y·z ) [lemma]
+    Given x ∈ ℝ[≠ 0]:
+      If x > 0:
+        x·x > x·0
+        x·x > 0 [lemma]
+      If x < 0:
+        x < 0 ∧ x < 0 ⇒ x·x > 0·x [lemma]
+        x·x > 0·x = 0
+        x·x > 0
+    ∀x∈ℝ[≠0] ( x·x > 0 )
+  ℝ ⊢ ∀x∈ℝ ∀y∈ℝ[≠0] ∃!z∈ℝ ( x = y·z ).
+    ∀ x ∈ ℝ[≠0] ∃y ∈ ℝ[≠0] ( x·y = 1 )
+    Given x ∈ ℝ:
+      Given y ∈ ℝ[≠0]:
+        Let c ∈ ℝ such that y·c = 1
+        x = x·1 = x·(y·c) = y·(x·c)
+        x = y·(x·c)
+        Given w ∈ ℝ:
+          If x = y·w:
+            x·c = y·w·c = w·(y·c) = w·1 = w.
+        ∀ w ∈ ℝ ( x = y·w ⇒ x·c = w )
+        x = y·(x·c) ∧ ∀ w ∈ ℝ ( x = y·w ⇒ x·c = w )
+        ∃z∈ℝ ( x = y·z ∧ ∀ w ∈ ℝ ( x = y·w ⇒ z = w ) )
+    ∀x∈ℝ ∀y∈ℝ[≠0] ∃z∈ℝ ( x = y·z ∧ ∀ w ∈ ℝ ( x = y·w ⇒ z = w ) )
+    ∀x∈ℝ ∀y∈ℝ[≠0] ∃!z∈ℝ ( x = y·z )
+Proof of ∃x∈ℝ ( x·x = 2 ), just to demonstrate how the completeness axiom is used:
+  - Study proof 
+  But you can also prove ∃x∈ℝ ( x·x = 2 ). These two demonstrate the simplest difference between ℚ and ℝ, and is what historically motivated investigation into irrational numbers.
+  However, the actual existence of the square-root of 2 was never proven axiomatically until much much later; it was just taken for granted that whatever length was constructible (using compass and straightedge given two points with distance 1) was also a real number. But since Galois, more than a millenia after Pythagoras, it is now known that the cube-root of 2 is not constructible... So arguably our real understanding of ℝ could only come after the axiomatization of reals, in Dedekind's time.
+  Every good textbook on real analysis will give (their own) proof of the existence of sqrt(2) or something like that. There are many ways. Another way is to first prove some higher-powered results like IVT (intermediate value theorem for continuous functions), and then apply it to the function f : ℝ→ℝ given by f(x) = x^2−2 for each x∈ℝ, after proving that this f is continuous. This is certainly more complicated than the proof I just gave you, but in time you will get to these results.
+  First version:
+    Let S = { x : x∈ℝ ∧ x·x ≤ 2 }.
+      - quote https://chat.stackexchange.com/transcript/message/58865323#58865323
+        Why it isn't allowed by comprehension ?
+      - Since ℝ is a type and definition P(x) ≡ x·x ≤ 2, you can use comprehension to infer: @post
+        { x : x∈ℝ ∧ x·x ≤ 2 } ∈ set
+        and from that,
+        { x : x∈ℝ ∧ x·x ≤ 2 } ∈ obj
+          Then, you are using the rule: ( E∈obj ⊢ y = E. [where y is a fresh variable] ), to reach this line:
+          Let S = { x : x∈ℝ ∧ x·x ≤ 2 }.
+          Is that correct ?
+    (4/3)·(4/3) ≤ 2.
+    4/3 ∈ S.
+    S ≠ ∅.
+    Given x∈S:
+      If x > 3/2:
+        x > 0.
+        3/2 > 0.
+        x·x > x·(3/2) > (3/2)·(3/2) = 9/4 > 2 ≥ x·x.
+        ⊥.
+      x ≤ 3/2.
+    S ≤ 3/2.
+    Let m∈ℝ such that S ≤ m ∧ ∀u∈ℝ ( S ≤ u ⇒ m ≤ u ).  [completeness]
+    4/3 ≤ m.  [by S ≤ m]
+      - Every element of S is ≤ m, so 4/3 being an element of S is ≤ than m ? @post
+    m ≤ 3/2.  [by ∀u∈ℝ ( S ≤ u ⇒ m ≤ u ) and S ≤ 3/2]
+    If m·m > 2:
+      [we shall show that m is not the least upper bound for S]
+        - Does "least upper bound" mean the same as "minimum" upper bound ? @post
+      Let e = (m·m−2)/2.
+      e > 0.
+      e/m > 0.  [otherwise e = (e/m)·m ≤ 0·m = 0]
+      m−e/m < m.
+      m−e/m > 0.  [because e ≤ e·2 = m·m−2 ≤ (3/2)·(3/2)−2 = 1/4 and m·m ≥ (4/3)·(4/3) = 16/9]
+      [we shall show that m−e/m is a smaller upper bound for S than m]
+      (m−e/m)·(m−e/m) = m·m−2·e+(e/m)·(e/m) > m·m−2·e = m·m−(m·m−2) = 2.
+      Given x∈S:
+        x·x ≤ 2.
+        If x > m−e/m:
+          x·x > x·(m−e/m) > (m−e/m)·(m−e/m) > 2.  [by m−e/m > 0 and the above inequality]
+          ⊥.
+        x ≤ m−e/m.
+      S ≤ m−e/m.
+      m ≤ m−e/m  [by minimality of m].
+      ⊥.
+    If m·m < 2:
+      [we shall show that m is not an upper bound for S]
+      Let e = (2−m·m)/3.
+      e > 0.
+      e/m > 0.
+      m+e/m > m.
+      [we shall show that m+e/m ∈ S]
+      (m+e/m)·(m+e/m) = m·m+2·e+(e/m)·(e/m) = m·m+3·e−e+(e/m)·(e/m) = 2−e+(e/m)·(e/m) ≤ 2
+      [because if e < e·e/m/m then m·m < e, but e ≤ 3·e = 2−m·m < m·m since m·m ≥ (4/3)·(4/3) > 1]
+      m+e/m ∈ S.
+      m+e/m ≤ m  [by the condition that m is an upper bound for S]
+      ⊥.
+    m·m = 2
+  Shorter version:
+    Let S = { x : x∈ℝ ∧ x·x ≤ 2 }.
+    1·1 ≤ 2.
+    1 ∈ S.
+    S ≠ ∅.
+    Given x∈S:
+      If x > 2:
+        x > 0.
+        2 > 0.
+        x·x > x·2 > 2·2 = 4 > 2 ≥ x·x.
+        ⊥.
+      x ≤ 2.
+    S ≤ 2.
+    Let m∈ℝ such that S ≤ m ∧ ∀u∈ℝ ( S ≤ u ⇒ m ≤ u ).  [completeness]
+    1 ≤ m.  [by S ≤ m]
+    //m ≤ 3/2.  [by ∀u∈ℝ ( S ≤ u ⇒ m ≤ u ) and S ≤ 3/2]
+    If m·m > 2:
+      [we shall show that m is not the least upper bound for S]
+      Let e = (m·m−2)/2.
+      e > 0.
+      e/m > 0.  [otherwise e = (e/m)·m ≤ 0·m = 0]
+      m−e/m < m.
+      m−e/m > 0.  [because e < e·2 < e·2+2 = m·m]
+      [we shall show that m−e/m is a smaller upper bound for S than m]
+      (m−e/m)·(m−e/m) = m·m−2·e+(e/m)·(e/m) > m·m−2·e = m·m−(m·m−2) = 2.
+      Given x∈S:
+        x·x ≤ 2.
+        If x > m−e/m:
+          x·x > x·(m−e/m) > (m−e/m)·(m−e/m) > 2.  [by m−e/m > 0 and the above inequality]
+          ⊥.
+        x ≤ m−e/m.
+      S ≤ m−e/m.
+      m ≤ m−e/m  [by minimality of m].
+      ⊥.
+    If m·m < 2:
+      [we shall show that m is not an upper bound for S]
+      Let e = (2−m·m)/3.
+      e > 0.
+      e/m > 0.
+      m+e/m > m.
+      [we shall show that m+e/m ∈ S]
+      (m+e/m)·(m+e/m) = m·m+2·e+(e/m)·(e/m) = m·m+3·e−e+(e/m)·(e/m) = 2−e+(e/m)·(e/m) ≤ 2
+      [because e < (4−m·m)/3 < (4·m·m−m·m)/3 = m·m since 1 < m·m]
+      m+e/m ∈ S.
+      m+e/m ≤ m  [by the condition that m is an upper bound for S]
+      ⊥.
+    m·m = 2.

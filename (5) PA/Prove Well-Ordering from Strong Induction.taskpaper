@@ -1,0 +1,27 @@
+[Induction] For any property P on ℕ, P(0) ∧ ∀k ∈ ℕ ( P(k) ⇒ P(k+1) ) ⇒ ∀k∈ℕ ( P(k) ).
+[Strong induction]  For any property P on ℕ, ∀k∈ℕ ( ∀i∈ℕ ( i<k ⇒ P(i) ) ⇒ P(k) ) ⇒ ∀k∈ℕ ( P(k) ).
+[Well-ordering] For any property P on ℕ, ∃k∈ℕ ( P(k) ) ⇒ ∃m∈ℕ ( P(m) ∧ ∀k∈ℕ ( P(k) ⇒ k≥m ) ).
+Prove Well-ordering from Strong induction:
+	For any property P on ℕ, we can prove:
+		If ∃k∈ℕ ( P(k) ):
+			Let a ∈ ℕ such that P(a)
+			If ¬∃m∈ℕ ( P(m) ∧ ∀k∈ℕ ( P(k) ⇒ k≥m ) ):
+				∀m∈ℕ ( P(m) ⇒ ∃k∈ℕ ( P(k) ∧ k<m ) )
+				Given k' ∈ ℕ:
+					If ∀i∈ℕ ( i<k' ⇒ ¬P(i) ):
+						If P(k'):
+							P(k') ⇒ ∃k∈ℕ ( P(k) ∧ k<k' )
+							∃k∈ℕ ( P(k) ∧ k<k' )
+							Let b ∈ ℕ such that P(b) ∧ b<k'
+							b<k' ⇒ ¬P(b)
+							¬P(b)
+							⊥
+						¬P(k')
+				∀k'∈ℕ ( ∀i∈ℕ ( i<k' ⇒ ¬P(i) ) ⇒ ¬P(k') ) 
+				∀k'∈ℕ ( ∀i∈ℕ ( i<k' ⇒ ¬P(i) ) ⇒ ¬P(k') ) ⇒ ∀k'∈ℕ ( ¬P(k') ) [Strong induction]
+				∀k'∈ℕ ( ¬P(k') )
+				¬P(a)
+				P(a)
+				⊥
+			∃m∈ℕ ( P(m) ∧ ∀k∈ℕ ( P(k) ⇒ k≥m ) )
+	For any property P on ℕ, we can prove ∃k∈ℕ ( P(k) ) ⇒ ∃m∈ℕ ( P(m) ∧ ∀k∈ℕ ( P(k) ⇒ k≥m ) ). [Well-ordering]

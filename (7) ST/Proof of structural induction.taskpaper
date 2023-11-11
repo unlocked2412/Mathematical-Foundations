@@ -1,0 +1,86 @@
+Using strong induction: 
+  For any type S and property Q on S and function-symbol f : S→ℕ, we can prove 
+    Define P(k) ≡ ∀x ∈ S ( f(x) = k ⇒ Q(x) ), for each k ∈ ℕ. 
+    If ∀x∈S ( ∀y∈S ( f(y) < f(x) ⇒ Q(y) ) ⇒ Q(x) ): 
+      Given k∈ℕ such that ∀i∈ℕ ( i < k ⇒ P(i) ): 
+        Given x∈S such that f(x) = k: 
+          Given y∈S such that f(y) < f(x): 
+            f(y) < k. 
+            P(f(y)). 
+            ∀x∈S ( f(x) = f(y) ⇒ Q(x) ). 
+            f(y) = f(y) ⇒ Q(y). 
+            Q(y). 
+          ∀y∈S ( f(y) < f(x) ⇒ Q(y) ). 
+          Q(x). 
+        P(k). 
+      ∀k∈ℕ ( P(k) ). [strong induction] 
+      ∀k ∈ ℕ ( ∀x ∈ S ( f(x) = k ⇒ Q(x) ) ) 
+      Given k ∈ ℕ: 
+        ∀x ∈ S ( f(x) = k ⇒ Q(x) ) 
+        ∀y ∈ S ( f(y) = k ⇒ Q(y) ) 
+      ∀k ∈ ℕ ( ∀y ∈ S ( f(y) = k ⇒ Q(y) ) ) 
+      Given x ∈ S: 
+        f(x) ∈ ℕ 
+        ∀y ∈ S ( f(y) = f(x) ⇒ Q(y) ) 
+        f(x) = f(x) ⇒ Q(x) 
+        Q(x) 
+      ∀x ∈ S ( Q(x) ) 
+    ∀x∈S ( ∀y∈S ( f(y)<f(x) ⇒ Q(y) ) ⇒ Q(x) ) ⇒ ∀x∈S ( Q(x) ) 
+  For any type S and property Q on S and function-symbol f : S→ℕ, we can prove ∀x∈S ( ∀y∈S ( f(y)<f(x) ⇒ Q(y) ) ⇒ Q(x) ) ⇒ ∀x∈S ( Q(x) ), for any type S and property Q on S and function-symbol f : S→ℕ
+
+  Using well-ordering: 
+  For any type S and property Q on S and function-symbol f : S→ℕ, we can prove 
+    Define P(k) ≡ ∀x ∈ S ( f(x) = k ⇒ Q(x) ), for each k ∈ ℕ. 
+    If ∀x∈S ( ∀y∈S ( f(y) < f(x) ⇒ Q(y) ) ⇒ Q(x) ): 
+      If ¬∀x ∈ S ( Q(x) ): 
+        ∃x ∈ S ( ¬Q(x) ) 
+        Let a ∈ S such that ¬Q(a) 
+        f(a) = f(a) ∧ ¬Q(a) 
+        ∃x ∈ S ( f(x) = f(a) ∧ ¬Q(x) ) 
+        ¬P(f(a)) 
+        ∃k ∈ ℕ ( ¬P(k) ) 
+        Let m ∈ ℕ such that ¬P(m) ∧ ∀k ∈ ℕ ( ¬P(k) ⇒ k ≥ m ) [well-ordering] 
+        ∀k ∈ ℕ ( ¬P(k) ⇒ k ≥ m) 
+        ¬P(m) 
+        ∃x ∈ S ( f(x) = m ∧ ¬Q(x) ) 
+        Let b ∈ S such that f(b) = m ∧ ¬Q(b) 
+        ∀y∈S ( f(y) < f(b) ⇒ Q(y) ) ⇒ Q(b) 
+        Given y ∈ S: 
+          If f(y) < f(b): 
+            f(y) < m 
+            f(y) < m ⇒ P(f(y)) 
+            P(f(y)) 
+            f(y) = f(y) ⇒ Q(y) 
+            Q(y) 
+        ∀y∈S ( f(y) < f(b) ⇒ Q(y) ) 
+        Q(b) 
+        ¬Q(b) 
+        ⊥ 
+      ∀x ∈ S ( Q(x) ) 
+  For any type S and property Q on S and function-symbol f : S→ℕ, we can prove ∀x∈S ( ∀y∈S ( f(y)<f(x) ⇒ Q(y) ) ⇒ Q(x) ) ⇒ ∀x∈S ( Q(x) )
+
+Notes: 
+  Intuitive approach using well-ordering 
+    Think of f(x) as size of x. (You have been doing that, right?) Given ∀x∈S ( ∀y∈S ( f(y) < f(x) ⇒ Q(y) ) ⇒ Q(x) ), we want to get ∀x∈S ( Q(x) ). If that fails, then let c be a counter-example, namely c∈S but ¬Q(c). Now the size of c is in ℕ, so let d be a counter-example with minimum size. But we have ∀y∈S ( f(y) < f(d) ⇒ Q(y) ) because every y∈S with smaller size than d is not a counter-example. Thus Q(d) by the given condition. Contradiction. 
+    Translation of intuitive approach: 
+      For any type S and property Q on S and function-symbol f : S→ℕ, we can prove  
+        If ∀x∈S ( ∀y∈S ( f(y) < f(x) ⇒ Q(y) ) ⇒ Q(x) ):  
+          If ¬∀x ∈ S ( Q(x) ):  
+            ∃x ∈ S ( ¬Q(x) )  
+            Let c ∈ S such that ¬Q(c)  
+            f(c) = f(c) ∧ ¬Q(c)  
+            ∃x ∈ S ( f(x) = f(x) ∧ ¬Q(x) ) 
+            ∃k ∈ ℕ ( ∃x ∈ S ( f(x) = k ∧ ¬Q(x) ) ) 
+            Let m ∈ ℕ such that ∃x ∈ S ( f(x) = m ∧ ¬Q(x) ) ∧ ∀k ∈ ℕ ( ∃x ∈ S ( f(x) = k ∧ ¬Q(x) ) ⇒ k ≥ m ) [well-ordering] 
+            ∀k ∈ ℕ ( ∃x ∈ S ( f(x) = k ∧ ¬Q(x) ) ⇒ k ≥ m ) 
+            Let d ∈ ℕ such that f(d) = m ∧ ¬Q(d) [d is a counter-example with minimum size] 
+            ∀y∈S ( f(y) < f(d) ⇒ Q(y) ) ⇒ Q(d) 
+            ∃y∈S ( f(y) < f(d) ∧ ¬Q(y) ) 
+            Let e ∈ S such that f(e) < f(d) such that ¬Q(e) 
+            f(e) = f(e) ∧ ¬Q(e) 
+            ∃x ∈ S ( f(x) = f(e) ∧ ¬Q(x) ) 
+            ∃x ∈ S ( f(x) = f(e) ∧ ¬Q(x) ) ⇒ f(e) ≥ m 
+            f(e) ≥ m 
+            f(e) ≥ f(d) 
+            ⊥  
+          ∀x ∈ S ( Q(x) )

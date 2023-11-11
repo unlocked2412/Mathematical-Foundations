@@ -1,0 +1,20 @@
+Given x ∈ ℤ:
+  ∀m∈ℤ ( even(m) ⋁ odd(m) ) [lemma]
+  even(x) ⋁ odd(x) [lemma]
+  If even(x):
+    Let k ∈ ℤ such that x = 2·k
+    x·x = 2·k·x
+    2·k·x = 4·k·k
+    x·x = 4·k·k
+    x·x = 4·(k·k) ∨ x·x = 4·(k·k) + 1
+    ∃m ∈ ℤ ( x·x = 4·m ⋁ x·x = 4·m + 1 )
+  If odd(x):
+    Let a ∈ ℤ such that x = 2·a+1
+    x·x = 2·a·x + x
+    x·(2·a+1) = (2·a+1)·(2·a+1)
+    x·x = (2·a+1)·(2·a+1) = 4·(a·a+a)+1
+    x·x = 4·(a·a+a)+1
+    x·x = 4·(a·a+a) ∨ x·x = 4·(a·a+a)+1
+    ∃m ∈ ℤ ( x·x = 4·m ⋁ x·x = 4·m + 1 )
+  ∃m ∈ ℤ ( x·x = 4·m ⋁ x·x = 4·m + 1 )
+∀x ∈ ℤ ∃m ∈ ℤ ( x^2 = 4·m ⋁ x^2 = 4·m + 1 )

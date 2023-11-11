@@ -1,0 +1,15 @@
+Given A, B, C ∈ set:
+  Given x ∈ obj:
+    If A ∖B ⊆ C:
+      If x ∈ A ∖C:
+        x ∈ A ∧ x ∉ C
+        If x ∉ B:
+          x ∈ A ∧ x ∉ B
+          x ∈ A ∖B
+          x ∈ C
+          x ∉ C
+          ⊥ 
+        x ∈ B
+      x ∈ A ∖C ⇒ x ∈ B
+    A ∖B ⊆ C ⇒ ( x ∈ A ∖C ⇒ x ∈ B )
+∀ A, B, C ∈ set ∀ x ∈ obj ( A ∖B ⊆ C ⇒ ( x ∈ A ∖C ⇒ x ∈ B ) )

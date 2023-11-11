@@ -1,0 +1,28 @@
+[Induction] For any property P on ℕ, P(0) ∧ ∀k ∈ ℕ ( P(k) ⇒ P(k+1) ) ⇒ ∀k∈ℕ ( P(k) ).
+Define P(k) ≡ ∃m∈ℕ ( k = m·2 ) ∨ ∃m∈ℕ ( k = m·2+1 )
+0 = 0·2
+∃m ∈ ℕ ( 0 = m·2 ) ∨ ∃m ∈ ℕ ( 0 = m·2+1 )
+P(0)
+Given k ∈ ℕ:
+	If P(k):
+		∃m∈ℕ ( k = m·2 ) ∨ ∃m∈ℕ ( k = m·2+1 )
+		If ∃m∈ℕ ( k = m·2 ):
+			Let a ∈ V such that k = a·2
+			k+1 = a·2+1
+			∃m ∈ ℕ ( k+1 = m·2+1 )
+			∃m∈ℕ ( k+1 = m·2 ) ∨ ∃m∈ℕ ( k+1 = m·2+1 )
+		If ∃m∈ℕ ( k = m·2+1 ):
+			Let b ∈ V such that k = b·2+1
+			k = b·2+1
+			k+1 = b·2+2
+			k+1 = (b+1)·2
+			∃m∈ℕ ( k+1 = m·2 ) 
+			∃m∈ℕ ( k+1 = m·2 ) ∨ ∃m∈ℕ ( k+1 = m·2+1 )
+		∃m∈ℕ ( k+1 = m·2 ) ∨ ∃m∈ℕ ( k+1 = m·2+1 )
+		P(k+1)
+	P(k) ⇒ P(k+1)
+∀k∈ℕ ( P(k) ⇒ P(k+1) )
+P(0) ∧ ∀k∈ℕ ( P(k) ⇒ P(k+1) )
+P(0) ∧ ∀k∈ℕ ( P(k) ⇒ P(k+1) ) ⇒ ∀ k ∈ ℕ ( P(k) )
+∀ k ∈ ℕ ( P(k) )
+∀k∈ℕ ( ∃m∈ℕ ( k = m·2 ) ∨ ∃m∈ℕ ( k = m·2+1 ) ), where "2" denotes "(1+1)".

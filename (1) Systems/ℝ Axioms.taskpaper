@@ -1,0 +1,23 @@
+Add the type ℝ, ℝ ∈ set, ℝ[≠0] = { x : x∈ℝ ∧ x≠0 }, reuse the symbols and operations of PA, the unary operation −  and the binary operation / (ℝ is an ordered field containing ℚ).
+[closure] ∀x,y∈ℝ (x+y∈ℝ). 
+[closure] ∀x,y∈ℝ (x⋅y∈ℝ). 
+[closure] ∀x,y∈ℝ (x-y∈ℝ). 
+[closure] ∀x∈ℝ ∀y∈ℝ[≠0] (x/y∈ℝ). 
+[ring] ∀x,y∈ℝ (x+y=y+x). 
+[ring] ∀x,y∈ℝ (x⋅y=y⋅x). 
+[ring] ∀x,y,z∈ℝ (x+(y+z)=(x+y)+z). 
+[ring] ∀x,y,z∈ℝ (x⋅(y⋅z)=(x⋅y)⋅z). 
+[ring] ∀x,y,z∈ℝ (x⋅(y+z)=x⋅y+x⋅z). 
+[ring] ∀x∈ℝ (x+0=x). 
+[ring] ∀x∈ℝ (x⋅1=x).
+[order] ∀x∈ℝ (¬x<x).
+[order] ∀x,y∈ℝ (x<y∨y<x∨x=y). 
+[order] ∀x,y,z∈ℝ (x<y∧y<z⇒x<z). 
+[order] ∀x,y,z∈ℝ (x<y⇒x+z<y+z). 
+[order] ∀x,y,z∈ℝ (x<y∧0<z⇒x⋅z<y⋅z). 
+[ring] ∀x∈ℝ ( x+(−x) = 0 )
+[ring] ∀x,y∈ℝ ( (x−y)+y = x )
+[order] 0<1.
+[ℚ ⊆ ℝ] ∀x∈ℚ ( x∈ℝ )
+[field] ∀x∈ℝ ∀y∈ℝ[≠0] ( x = y·(x/y) )
+[complete] ∀S⊆ℝ ( S≠∅ ∧ ∃u∈ℝ ∀x∈S ( x≤u ) ⇒ ∃m∈ℝ ( ∀x∈S ( x≤m ) ∧ ∀u∈ℝ ( ∀x∈S ( x≤u ) ⇒ m≤u ) ) ).

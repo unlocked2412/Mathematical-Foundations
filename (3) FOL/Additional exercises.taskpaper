@@ -1,0 +1,72 @@
+Example Proof from user21820 post:
+  ∃ x ∈ S(∀ y ∈ T(P(x,y))) ⇒ ∀ y ∈ T( ∃ x ∈ S(P(x, y)))
+  If ∃ x ∈ S(∀ y ∈ T(P(x,y))):
+    Given b ∈ T:
+      Let a ∈ S such that ∀ y ∈ T ( P(a, y))
+      ∀ y ∈ T ( P(a, y))
+      b ∈ T
+      P(a, b)
+      a ∈ S
+      ∃ x ∈ S( P(x, b))
+    ∀ b ∈ T( ∃ x ∈ S(P(x, b)))
+    ∀ y ∈ T( ∃ x ∈ S(P(x, y)))
+  ∃ x ∈ S(∀ y ∈ T(P(x,y))) ⇒ ∀ y ∈ T( ∃ x ∈ S(P(x, y)))
+Invertible square matrices have unique inverses:
+  If M has an inverse:
+    Let A be an inverse of M
+    MA = AM = I
+    Given B:
+      If B is an inverse of M:
+        MB = BM = I
+        AM = I
+        MB = I
+        A = AI
+        A = AMB
+        B = IB
+        B = AMB
+        A = B
+      B is an inverse of M ⇒ A = B
+    ∀ B ( B is an inverse of M ⇒ A = B)
+    ∀ Y ( Y is an inverse of M ⇒ A = Y)
+  M has an inverse ⇒ ∀ Y ( Y is an inverse of M ⇒ A = Y)
+Uniqueness equivalences:
+  (=>)
+    If ∃x ∈ S ( Q(x) ∧ ∀y ∈ ( Q(y) ⇒ x=y ) ):
+      Let c ∈ S such that Q(c) ∧ ∀ y ∈ S ( Q(y) ⇒ c = y )
+      Q(c) ∧ ∀ y ∈ S ( Q(y) ⇒ c = y )
+      c ∈ S
+      Q(c)
+      ∃ x ∈ S Q(x)
+      Given a ∈ S:
+        Given b ∈ S:
+          If Q(a) ∧ Q(b):
+            ∀y ∈ S ( Q(y) ⇒ c = y )
+            Q(a) ⇒ c = a
+            Q(b) ⇒ c = b
+            Q(a)
+            c = a
+            Q(b)
+            c = b
+            a = b
+          Q(a) ∧ Q(b) ⇒ a = b
+      ∀a,b ∈ S ( Q(a) ∧ Q(b) ⇒ a=b )
+      ∀x,y ∈ S ( Q(x) ∧ Q(y) ⇒ x=y )
+      ∃x ∈ S ( Q(x) ) ∧ ∀x,y ∈ S ( Q(x) ∧ Q(y) ⇒ x=y )
+    ∃x ∈ S ( Q(x) ∧ ∀y ∈ ( Q(y) ⇒ x=y ) ) ⇒ ∃x ∈ S ( Q(x) ) ∧ ∀x,y ∈ S ( Q(x) ∧ Q(y) ⇒ x=y )
+  (<=)
+    If ∃x ∈ S ( Q(x) ) ∧ ∀x,y ∈ S ( Q(x) ∧ Q(y) ⇒ x=y ):
+      ∃ x ∈ S ( Q(x) )
+      Let a ∈ S such that Q(a)
+      Given b ∈ S:
+        If Q(b):
+          ∀x,y ∈ S ( Q(x) ∧ Q(y) ⇒ x=y )
+          Q(a) ∧ Q(b) ⇒ a=b
+          Q(a)
+          Q(b)
+          Q(a) ∧ Q(b)
+          a = b
+        Q(b) ⇒ a = b
+      ∀ b ∈ S ( Q(b) ⇒ a = b )
+      Q(a) ∧ ∀ y ∈ S ( Q(y) ⇒ a = y )
+      ∃x ∈ S ( Q(x) ∧ ∀y ∈ S ( Q(y) ⇒ x=y ) )
+    ∃x ∈ S ( Q(x) ) ∧ ∀x,y ∈ S ( Q(x) ∧ Q(y) ⇒ x=y ) ⇒ ∃x ∈ S ( Q(x) ∧ ∀y ∈ ( Q(y) ⇒ x=y ) )

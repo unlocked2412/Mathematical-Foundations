@@ -1,0 +1,30 @@
+∀ x ∈ S ( ∀ y ∈ S ( Q (x, y) ⇒ P(x)) ⇔ ∀ x ∈ S ( ∃ y ∈ S (Q(x, y)) ⇒ P(x))
+(=>)
+  ∀ x ∈ S ( ∀ y ∈ S ( Q (x, y) ⇒ P(x)) ⇒ ∀ x ∈ S ( ∃ y ∈ S (Q(x, y)) ⇒ P(x))
+  If ∀ x ∈ S ( ∀ y ∈ S ( Q (x, y) ⇒ P(x))):
+    Given a ∈ S:
+      If ∃ y ∈ S (Q(a, y)):
+        Let b ∈ S such that Q(a, b)
+        ∀ y ∈ S ( Q (a, y) ⇒ P(a) )
+        Q(a, b) ⇒ P(a)
+        Q(a, b)
+        P(a)
+      ∃ y ∈ S (Q(a, y)) ⇒ P(a)
+    ∀ a ∈ S ( ∃ y ∈ S (Q(a, y)) ⇒ P(a))
+    ∀ x ∈ S ( ∃ y ∈ S (Q(x, y)) ⇒ P(x))
+  ∀ x ∈ S ( ∀ y ∈ S ( Q (x, y) ⇒ P(x))) ⇒ ∀ x ∈ S ( ∃ y ∈ S (Q(x, y)) ⇒ P(x))
+(<=)
+  ∀ x is ∈ S ( ∃ y ∈ S (Q(x, y)) ⇒ P(x)) ⇒ ∀ x ∈ S ( ∀ y ∈ S ( Q (x, y) ⇒ P(x)) 
+  If ∀ x is ∈ S ( ∃ y ∈ S (Q(x, y)) ⇒ P(x)):
+    Given a ∈ S:
+      Given b ∈ S:
+        If Q(a, b):
+          ∃ y ∈ S (Q(a,y))
+          ∃ y ∈ S (Q(a,y)) ⇒ P(a)
+          P(a)
+        Q(a, b) ⇒ P(a)
+      ∀ b ∈ S ( Q (x, b) ⇒ P(x))
+      ∀ y ∈ S ( Q (x, y) ⇒ P(x))
+    ∀ a ∈ S ( ∀ y ∈ S ( Q (a, y) ⇒ P(a)))
+    ∀ x ∈ S ( ∀ y ∈ S ( Q (x, y) ⇒ P(x)))
+  ∀ x is ∈ S ( ∃ y ∈ S (Q(x, y)) ⇒ P(x)) ⇒ ∀ x ∈ S ( ∃ y ∈ S (Q(x, y)) ⇒ P(x))

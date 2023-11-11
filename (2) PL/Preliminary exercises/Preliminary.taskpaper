@@ -1,0 +1,30 @@
+Prove the following sentences are theorems and justify each lines using the following format:
+
+Proposition [rule line number(s)]
+
+For example:
+
+...
+B [∧elim 1]
+
+Exercises:
+
+(1) A ⇒ A ∧ A
+
+(2) A ⇒ A v A
+
+(3) A ⇒ A ∨ (M ∧ B) 
+
+(4) A ∧ (B ∧ C) ⇒ C
+
+(5) A ∧ (B ∧ C) ⇒ (A ∧ B) ∧ C
+
+(6) (A ⇒ B) ∧ (B ⇒ C) ⇒ (A ⇒ C)
+
+(7) A ⇒ (B ⇒ (A ∧ B))
+
+(8) A ⇒ (B ⇒ (C ⇒ (A ∧ B)))
+
+--- Contradiction & Negation
+
+(9) A ⇒ (¬¬A)

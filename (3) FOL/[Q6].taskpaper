@@ -1,0 +1,17 @@
+∀ x ∈ S ( f(f(f(x))) = f(f(x)) ) ∧ ∀ x ∈ S ∃ y ∈ S ( x = f(y) ) ⇒ ∀ x ∈ S ( f(x) = x ), where f : S -> S.
+If ∀ x ∈ S ( f(f(f(x))) = f(f(x)) ) ∧ ∀ x ∈ S ∃ y ∈ S ( x = f(y) ):
+  ∀ x ∈ S ( f(f(f(x))) = f(f(x)) ) 
+  ∀ x ∈ S ∃ y ∈ S ( x = f(y) )
+  Given a ∈ S:
+    ∃ y ∈ S ( a = f(y) )
+    Let b ∈ S such that a = f(b)
+    Let c ∈ S such that b = f(c)
+    a = f(b)
+    b = f(c)
+    a = f(f(c))
+    f(f(f(c))) = f(f(c))
+    f(f(f(c))) = a
+    f(a) = a
+  ∀ a ∈ S ( f(a) = a )
+  ∀ x ∈ S ( f(x) = x )
+∀ x ∈ S ( f(f(f(x))) = f(f(x)) ) ∧ ∀ x ∈ S ∃ y ∈ S ( x = f(y) ) ⇒ ∀ x ∈ S ( f(x) = x )

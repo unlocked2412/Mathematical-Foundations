@@ -1,0 +1,46 @@
+Using structural induction:
+  For any type S and property Q on S and function-symbol f : S→ℕ, we can prove 
+    If ∃x∈S ( Q(x) ):
+      If ¬∃x∈S ( Q(x) ∧ ∀y∈S ( Q(y) ⇒ f(x) ≤ f(y) ) ):
+        ∀x∈S ( Q(x) ⇒ ∃y∈S ( Q(y) ∧ f(x) > f(y) ) )
+        Let a ∈ S such that Q(a)
+        Given x ∈ S:
+          If ∀y∈S ( f(y)<f(x) ⇒ ¬Q(y) ):
+            [Prove ¬Q(x)]
+            If Q(x):
+              ∃y∈S ( Q(y) ∧ f(x) > f(y) )
+              Let b ∈ S such that  Q(b) ∧ f(x) > f(b)
+              f(b) < f(x)
+              f(b) < f(x) ⇒ ¬Q(b)
+              ¬Q(b)
+              ⊥
+            ¬Q(x)
+        ∀x∈S ( ¬Q(x) ) [structural-induction]
+        ¬Q(a)
+        ⊥
+      ∃x∈S ( Q(x) ∧ ∀y∈S ( Q(y) ⇒ f(x) ≤ f(y) ) )
+Using well-ordering:
+  For any type S and property Q on S and function-symbol f : S→ℕ, we can prove 
+    If ∃x∈S ( Q(x) ):
+      Let c ∈ S such that Q(c)
+      f(c) = f(c) ∧ Q(c)
+      ∃x ∈ S ( f(x) = f(x) ∧ Q(x) )
+      ∃k ∈ ℕ ( ∃x ∈ S ( f(x) = k ∧ Q(x) ) )
+      Let m ∈ ℕ such that ∃x ∈ S ( f(x) = m ∧ Q(x) ) ∧ ∀k ∈ ℕ ( ∃x ∈ S ( f(x) = k ∧ Q(x) ) ⇒ k ≥ m ) [well-ordering]
+      Let d ∈ ℕ such that f(d) = m ∧ Q(d)
+      Given y ∈ S:
+        If Q(y):
+          f(y) = f(y) ∧ Q(y)
+          ∃x ∈ S ( f(x) = f(y) ∧ Q(x) )
+          ∃x ∈ S ( f(x) = f(y) ∧ Q(x) ) ⇒ f(y) ≥ m
+          f(y) ≥ m
+          f(y) ≥ f(d)
+      ∀y∈S ( Q(y) ⇒ f(d) ≤ f(y) )
+      Q(d) ∧ ∀y∈S ( Q(y) ⇒ f(d) ≤ f(y) )
+      ∃x∈S ( Q(x) ∧ ∀y∈S ( Q(y) ⇒ f(x) ≤ f(y) ) )
+  Notes:
+    Intuitive proof:
+      Think of f(x) as size of x. Given ∃x ∈ S ( Q(x) ), we want to get ∃x∈S ( Q(x) ∧ ∀y∈S ( Q(y) ⇒ f(x) ≤ f(y) ) ). Let d be an example with minimum size m. Now, take any y ∈ S and assume Q(y). The size of y is at least m.
+      Since m = f(d), we see f(d) ≤ f(y).
+      Now, we have Q(d) and for any y ∈ S, Q(y) implies f(d) ≤ f(y).
+      Therefore, for some x ∈ S, Q(x) holds and for any y ∈ S, Q(y) implies f(x) ≤ f(y).

@@ -1,0 +1,168 @@
+∀k,m∈ℕ ( m > 1 ∧ ¬∃d∈ℕ ( d > 1 ∧ d | k ∧ d | m ) ⇒ ∃x,y∈ℕ ( k·x = m·y+1 ) )
+  Define Q(n) ≡ ∀k,m∈ℕ ( k+m = n ⇒ ( m > 1 ∧ ¬∃d∈ℕ ( d > 1 ∧ d | k ∧ d | m ) ⇒ ∃x,y∈ℕ ( k·x = m·y+1 ) ) )
+  Given n∈ℕ:
+    ∀i∈ℕ ( i < n ⇒ Q(i) ):
+      Given k,m∈ℕ:
+        If k+m = n:
+          If m > 1 ∧ ¬∃d∈ℕ ( d > 1 ∧ d | k ∧ d | m ):
+            If k = m:
+              m > 1 ∧ m | m ∧ m | m
+              m > 1 ∧ m | k ∧ m | m
+              ∃d∈ℕ ( d > 1 ∧ d | k ∧ d | m )
+              ⊥
+            k ≠ m.
+            If k < m:
+              If k < 1:
+                k = 0
+                m > 1 ∧ m | 0 ∧ m | m
+                m > 1 ∧ m | k ∧ m | m
+                ∃ d ∈ ℕ ( d > 1 ∧ d | k ∧ d | m )
+                ⊥
+              k ≥ 1.
+              k·m ≥ m.
+              Let x∈ℕ be minimum such that k·x ≥ m.
+              Let r∈ℕ such that k·x = m+r.
+              If r ≥ k:
+                r + m ≥ k + m
+                k · x ≥ k + m
+                If ¬ (x ≥ 1):
+                  x = 0
+                  k·0 ≥ m
+                  ∀ x ∈ ℕ ( x·0 = 0 ) [lemma]
+                  0 ≥ m
+                  m > 1
+                  0 > 1
+                  ⊥ 
+                x ≥ 1
+                ∀x,y∈ℕ ( x≤y ⇒ ∃z∈ℕ ( x+z = y ) ) [lemma]
+                  Given x,y ∈ ℕ:
+                    If x ≤ y:
+                      If x = y:
+                        x+0=x
+                        x+0=y
+                        ∃z∈ℕ ( x+z = y ) 
+                      If x < y:
+                        ∃z∈ℕ ( x+z = y ) 
+                      ∃z∈ℕ ( x+z = y ) 
+                  ∀x,y∈ℕ ( x≤y ⇒ ∃z∈ℕ ( x+z = y ) )
+                    
+                1≤x ⇒ ∃z∈ℕ ( 1+z = x )
+                ∃z∈ℕ ( 1+z = x )
+                Let x' such that 1 + x' = x
+                x' < x
+                k·x ≥ k + m
+                k·(1+x') ≥ k + m
+                k + k·x' ≥ k + m
+                k·x' ≥ m
+                k·x' ≥ m ⇒ x' ≥ x
+                x' ≥ x
+                x' < x
+                ⊥
+              r < k.
+              r < m.
+              k+r < k+m = n.
+              Q(r+k).
+              ∀k,m∈ℕ ( k+m = r+k ⇒ ( m > 1 ∧ ¬∃d∈ℕ ( d > 1 ∧ d | k ∧ d | m ) ⇒ ∃x,y∈ℕ ( k·x = m·y+1 ) ) )
+              k+r = r+k ⇒ ( k > 1 ∧ ¬∃d∈ℕ ( d > 1 ∧ d | r ∧ d | k ) ⇒ ∃x,y∈ℕ ( r·x = k·y+1 ) ) )
+              If ∃d∈ℕ ( d > 1 ∧ d | r ∧ d | k ):
+                Let d' ∈ ℕ such that d' > 1 ∧ d' | r ∧ d' | k
+                Let a ∈ ℕ such that r = d'·a
+                Let b ∈ ℕ such that k = d'·b
+                [Rewrite d'·(b·x - a) = m within PA]
+                If a ≥ b·x:
+                  d'·a ≥ d'·(b·x)
+                  d'·a ≥ (d'·b)·x
+                  r ≥ k·x
+                  ⊥ 
+                a < b·x
+                ∀x,y∈ℕ ( x≤y ⇒ ∃z∈ℕ ( x+z = y ) ) [lemma]
+                Let z' ∈ ℕ such that a + z' = b·x
+                a + z' = b·x
+                k·x = m + r
+                (d'·b)·x = m + d'·a
+                d'·(b·x) = m + d'·a
+                d'·(a + z') = m + d'·a
+                d'·a + d'·z' = m + d'·a
+                d'·z' = m
+                d' | m
+                d' > 1 ∧ d' | k ∧ d' | m
+                ∃d∈ℕ ( d > 1 ∧ d | k ∧ d | m )
+                ⊥ 
+              ¬∃d∈ℕ ( d > 1 ∧ d | r ∧ d | k ).
+              If k = 1:
+                1·1 = m·0+1
+                k·1 = m·0+1
+                ∃x,y∈ℕ ( k·x = m·y+1 ) )
+              If k > 1:
+                Let p,q∈ℕ such that r·p = k·q+1.
+                k·(x·p) = m·p+r·p = m·p+k·q+1.
+                m·p+k·q+1 > m·p+k·q
+                m·p+k·q ≥ k·q
+                m·p+k·q+1 > k·q
+                k·(x·p) > k·q
+                ∀k,x,y∈ℕ ( k·x > k·y ⇒ x > y ) [lemma]
+                x·p > q
+                ∀x,y∈ℕ ( x<y ⇒ ∃z∈ℕ ( x+z = y ) )
+                Let s∈ℕ such that x·p = q+s.
+                k·(x·p) = m·p+r·p = m·p+k·q+1
+                k·(q + s) = m·p + k·q + 1
+                k·q + k·s = m·p + k·q + 1
+                ∀k,x,y∈ℕ ( k + x > k + y ⇒ x = y ) [lemma]
+                k·s = m·p+1.  [using cancellation]
+                ∃x,y∈ℕ ( k·x = m·y+1 )
+            If k > m:
+              Let z ∈ ℕ such that m + z = k
+              k = m·1 + z
+              ∃t,u∈ℕ ( k = m·t+u ).
+              Let r∈ℕ be minimum such that ∃t∈ℕ ( k = m·t+r ).
+              Let y∈ℕ such that k = m·y+r.
+              If r ≥ m:
+                r + m·y ≥ m + m·y [useless]
+                k ≥ m + m·y [useless]
+                k ≥ m·(1 + y) [useless]
+                ∀x,y∈ℕ ( x≤y ⇒ ∃z∈ℕ ( x+z = y ) ) [lemma]
+                Let a ∈ ℕ such that r = m + a
+                k = m·y + r = m·(y+1)+a
+                k = m·(y+1)+a
+                ∃ t ∈ ℕ ( k = m·t + a )
+                a ≥ r
+                m > 1
+                m + a > 1 + a
+                r > 1 + a > a
+                a < r
+                ⊥
+              r < m.
+              r < k.
+              r+m < k+m = n.
+              Q(r+m).
+              If ∃d∈ℕ ( d > 1 ∧ d | r ∧ d | m ):
+                Let d' ∈ ℕ such that d' > 1 ∧ d' | r ∧ d' | m
+                Let a ∈ ℕ such that r = d'·a
+                Let b ∈ ℕ such that m = d'·b
+                k = m·y+r
+                k = (d'·b)·y+d'·a
+                k = d'·(b·y)+d'·a
+                k = d'·(b·y + a)
+                d' | k
+                d' > 1 ∧ d' | k ∧ d' | m
+                ∃d∈ℕ ( d > 1 ∧ d | k ∧ d | m )
+                ⊥ 
+              ¬∃d∈ℕ ( d > 1 ∧ d | r ∧ d | m ).
+              ∀k,m∈ℕ ( k+m = r+m ⇒ ( m > 1 ∧ ¬∃d∈ℕ ( d > 1 ∧ d | k ∧ d | m ) ⇒ ∃x,y∈ℕ ( k·x = m·y+1 ) ) )
+              r+m = r+m ⇒ ( m > 1 ∧ ¬∃d∈ℕ ( d > 1 ∧ d | r ∧ d | m ) ⇒ ∃x,y∈ℕ ( r·x = m·y+1 ) )
+              r+m = r+m 
+              m > 1 ∧ ¬∃d∈ℕ ( d > 1 ∧ d | r ∧ d | m ) ⇒ ∃x,y∈ℕ ( r·x = m·y+1 ) 
+              m > 1 ∧ ¬∃d∈ℕ ( d > 1 ∧ d | r ∧ d | m )
+              ∃x,y∈ℕ ( r·x = m·y+1 )
+              Let p,q∈ℕ such that r·p = m·q+1.
+              k·p = m·(y·p)+r·p = m·(y·p)+m·q+1 = m·(y·p+q)+1.
+              k·p = m·(y·p+q)+1
+              ∃x,y ∈ ℕ ( k·x = m·y + 1 )
+            ∃x,y∈ℕ ( k·x = m·y+1 )
+        k+m = n ⇒ ( m > 1 ∧ ¬∃d∈ℕ ( d > 1 ∧ d | k ∧ d | m ) ⇒ ∃x,y∈ℕ ( k·x = m·y+1 ) )
+      ∀k,m∈ℕ ( k+m = n ⇒ ( m > 1 ∧ ¬∃d∈ℕ ( d > 1 ∧ d | k ∧ d | m ) ⇒ ∃x,y∈ℕ ( k·x = m·y+1 ) ) )
+      Q(n).
+  ∀n∈ℕ ( Q(n) ).  [strong induction]
+Hint:
+  We use strong induction along k+m, so we can assume (PA5) holds for any k,m with a smaller sum. Prove that k ≥ 1. Then k·(m+1) > m. By well-ordering, let x∈ℕ be minimum such that k·x > m. By well-ordering again let y∈ℕ be minimum such that k·x > m·y. Let r∈ℕ such that k·x = m·y+r. Prove that 0 < r < m. If r = 1, we are done. If r > 1, apply the induction on r,k since r+k < k+m, and let p,q∈ℕ such that r·p = k·q+1, and hence k·(x·p) = m·y·p+r·p = m·y·p+k·q+1, so k·(x·p−q) = m·(y·p)+1.
+  Also, PA does not have subtraction but you can use the appropriate PA− axiom to obtain x·p−q after you have proven x.p ≥ q.

@@ -1,0 +1,64 @@
+First attempt:
+  ∀ x,y,z ∈ G ( x*(y*z) = (x*y)*z ) ∧ ∀ x,y ∈ G ( x*i(x) = y*i(y) ) ∧ ∀ x ∈ G ( x*(x*i(x)) = x ) ⇒ ∀ x,y ∈ G ( (i(y)*y)*x = x), where (infix) * : G^2 -> G and i : G -> G.
+    If ∀ x,y,z ∈ G ( x*(y*z) = (x*y)*z ) ∧ ∀ x,y ∈ G ( x *i(x) = y*i(y) ) ∧ ∀ x ∈ G ( x*(x*i(x)) = x ):
+      Given a ∈ G:
+        Given b ∈ G: 
+          b*(b*i(b)) = b
+          i(b)*(i(b)*i(i(b))) = i(b)
+          i(b)*(b*i(b)) = i(b)
+          a*i(a) = i(b)*i(i(b))
+          a*i(a) = (i(b)*(b*i(b)))*i(i(b)))
+          a*i(a) = i(b)*((b*i(b))*i(i(b))))
+          a*i(a) = i(b)*(b*(i(b)*i(i(b)))))
+          a*i(a) = i(b)*(b*(b*i(b)))
+          a*i(a) = i(b)*b
+      ∀ a,b ∈ G ( a*i(a) = i(b)*b)
+      ∀ x,y ∈ G ( x*i(x) = i(y)*y )
+      Given a ∈ G:
+        Given b ∈ G: 
+          a*a*i(a) = a
+          a*i(a) = i(a)*a
+          a*(i(a)*a) = a
+          (a*i(a))*a = a
+          a*i(a)  = i(b)*b
+          (i(b)*b)*a = a
+      ∀a,b ∈ G ( (i(b)*b)*a = a )
+      ∀x,y ∈ G ( (i(y)*y)*x = x )
+    ∀ x,y,z ∈ G ( x*(y*z) = (x*y)*z ) ∧ ∀ x,y ∈ G ( x *i(x) = y*i(y) ) ∧ ∀ x ∈ G ( x*(x*i(x)) = x ) ⇒ ∀ x,y ∈ G ( (i(y)*y)*x = x)
+Second attempt: @post
+  ∀ x,y,z ∈ G ( x*(y*z) = (x*y)*z ) ∧ ∀ x,y ∈ G ( x*i(x) = y*i(y) ) ∧ ∀ x ∈ G ( x*(x*i(x)) = x ) ⇒ ∀ x,y ∈ G ( (i(y)*y)*x = x), where (infix) * : G^2 -> G and i : G -> G
+    If ∀ x,y,z ∈ G ( x*(y*z) = (x*y)*z ) ∧ ∀ x,y ∈ G ( x*i(x) = y*i(y) ) ∧ ∀ x ∈ G ( x*(x*i(x)) = x ): @post
+      Given x,y ∈ G:
+        y*x*i(x)*i(i(x)) = y*x*x*i(x) = y*x
+        y*x*i(x)*i(i(x)) = y*y*i(y)*i(i(x)) = y*i(i(x))
+      ∀ x,y ∈ G ( y*i(i(x)) = y*x*i(x)*i(i(x)) = y*x )
+      Given x ∈ G:
+        i(x)*x = i(x)*i(i(x)) [lemma above]
+        i(x)*i(i(x)) = x*i(x)
+        x*i(x) = i(x)*x
+      ∀ x ∈ G ( x*i(x) = i(x)*x ) 
+      Given x ∈ G:
+        x*x*i(x) = x
+        x*i(x)*i(i(x)) = x
+        y*i(y)*i(i(x)) = x
+        i(y)*y*i(i(x)) = x
+        i(y)*y*x = x
+      ∀ x,y ∈ G ( (i(y)*y)*x = x )
+    ∀ x,y,z ∈ G ( x*(y*z) = (x*y)*z ) ∧ ∀ x,y ∈ G ( x *i(x) = y*i(y) ) ∧ ∀ x ∈ G ( x*(x*i(x)) = x ) ⇒ ∀ x,y ∈ G ( (i(y)*y)*x = x)
+  Notes:
+    Canonicalization technique: It is an extremely powerful technique that can be used in all areas of mathematics. It basically means to define canonical forms and use them to represent all cases.
+    What I told you above is an example:
+      The idea behind solving (Q9) is to make use of the given conditions to simplify the proof search.
+      The first condition (which you know is associativity) means that we can drop all brackets involving the operation ✻.
+      The second condition implies that we can consider anything of the form "t✻i(t)" as equal.
+      The third condition should be used as a reduction, namely x✻x✻i(x) → x, which by the second condition generalizes to x✻y✻i(y) → x.
+      So the first thing we should try is to find a term that can be reduced in different ways to get some new fact.
+      Obviously, we would need a term with 4 subterms or more, so try 4 first!
+    When we search for a term that can be reduced via the third condition:
+      The third condition should be used as a reduction, namely x✻x✻i(x) → x, which by the second condition generalizes to x✻y✻i(y) → x.
+    The notion of "reduction" is based on canonicalization as well. The idea is that we want to reduce all cases to a "canonical form". Sometimes we do it by equivalences (as in the first two). Other times we do it via reduction to a simpler form (as in the third).
+    And because of the second condition, this reduction can be generalized as I stated.
+    This reduction needs a 3-part term, and reduces it to 1 part. So if we want two different results we need a 4-part term, and it must be of the form y✻x✻i(x)✻i(i(x)).
+    Because we want to be able to reduce the first 3 parts, and also the last 3 parts.
+    Choosing "y" in front is to make it as general as possible, to cover as many cases as possible. (And if you think about it, it's the only 4-part term that we need to try.)
+    The two reductions yield yx = yxx'x'' = yx''. 

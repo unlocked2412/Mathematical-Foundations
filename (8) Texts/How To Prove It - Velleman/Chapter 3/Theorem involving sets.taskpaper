@@ -1,0 +1,14 @@
+Given A,B,C∈set:
+  Given a∈C:
+    If A⋂C ⊆ B:
+      ∀ x ∈ A⋂C ( x ∈ B )
+      If a ∈ A∖B:
+        a ∈ A ∧ a ∉ B
+        a ∈ A ∧ a ∈ C
+        a ∈ A⋂C
+        a ∈ B
+        a ∉ B
+        ⊥
+      a∉A∖B.
+  ∀a∈C ( A⋂C ⊆ B ⇒ a∉A∖B )
+∀A,B,C∈set ∀a∈C ( A⋂C ⊆ B ⇒ a∉A∖B )

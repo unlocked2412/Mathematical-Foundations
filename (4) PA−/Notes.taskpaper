@@ -1,0 +1,3 @@
+Convenience for using the definition of subtraction:
+  It would be convenient to first prove ∀x,y∈ℕ ( x≤y ⇒ ∃z∈ℕ ( x+z = y ) ), just so that you can use it next time for subtraction.
+  And so for the original problem, you just need to prove x ≥ 1 so that you can construct x−1 and finish what you want to get.

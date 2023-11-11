@@ -1,0 +1,33 @@
+∀ k,m ∈ ℕ ( k < m ⇒ k + 1 ≤ m ) [discreteness]
+If ∃x,y,z∈ℕ ( 1<x<y<z<4 ):
+  Let a,b,c ∈ ℕ such that 1<a<b<c<4
+  2 ≤ a
+  3 ≤ a + 1 ≤ b
+  4 ≤ b+1 ≤ c < 4
+  4 < 4
+  ¬(4 < 4)
+  ⊥
+¬∃x,y,z∈ℕ ( 1<x<y<z<4 )
+∀x,y,z∈ℕ ( x≤y ∧ x≤z ⇒ x≤z ) [lemma]
+  Given x ∈ ℕ:
+    Given y ∈ ℕ:
+      Given z ∈ N:
+        If x ≤ y ∧ y ≤ z:
+          If x < y:
+            If y < z:
+              x < z
+              x ≤ z
+            If y = z:
+              x < z
+              x ≤ z
+          If x = y:
+            If y < z:
+              x < z
+              x ≤ z
+            If y = z:
+              x = z
+              x ≤ z
+          x ≤ z
+  ∀x,y,z∈ℕ ( x≤y ∧ x≤z ⇒ x≤z )
+Notes:
+  From 1<a<b<c<4 you get 2≤a so 3≤a+1≤b so 4≤b+1≤c<4 so 4<4 (using both transitivity of ≤ and ∀x,y,z∈ℕ ( x≤y<z ⇒ x<z )), which immediately gives contradiction.

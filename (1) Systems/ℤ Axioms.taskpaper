@@ -1,0 +1,21 @@
+Add the type ℤ, ℤ ∈ set, reuse the symbols and operations of PA, add the unary operation – and the binary operation – (ℤ is an ordered ring containing ℕ).
+[closure] ∀x,y∈ℤ (x+y∈ℤ). 
+[closure] ∀x,y∈ℤ (x⋅y∈ℤ). 
+[closure] ∀x,y∈ℤ (x–y∈ℤ). 
+[ring] ∀x,y∈ℤ (x+y=y+x). 
+[ring] ∀x,y∈ℤ (x⋅y=y⋅x). 
+[ring] ∀x,y,z∈ℤ (x+(y+z)=(x+y)+z). 
+[ring] ∀x,y,z∈ℤ (x⋅(y⋅z)=(x⋅y)⋅z). 
+[ring] ∀x,y,z∈ℤ (x⋅(y+z)=x⋅y+x⋅z). 
+[ring] ∀x∈ℤ (x+0=x). 
+[ring] ∀x∈ℤ (x⋅1=x). 
+[order] ∀x∈ℤ (¬x<x). 
+[order] ∀x,y∈ℤ (x<y∨y<x∨x=y). 
+[order] ∀x,y,z∈ℤ (x<y∧y<z⇒x<z). 
+[order] ∀x,y,z∈ℤ (x<y⇒x+z<y+z). 
+[order] ∀x,y,z∈ℤ (x<y∧0<z⇒x⋅z<y⋅z). 
+[ring] ∀x∈ℤ ( x+(−x) = 0 )
+[order] 0<1.
+[ℕ ⊆ ℤ] ∀x∈ℕ ( x∈ℤ ) 
+[ring] ∀x,y∈ℤ ( (x−y)+y = x )
+[ℤ=ℕ⋃−ℕ] ∀x∈ℤ ( x∈ℕ ∨ −x∈ℕ )

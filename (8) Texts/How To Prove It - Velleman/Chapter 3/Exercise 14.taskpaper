@@ -1,0 +1,92 @@
+∀ x,y ∈ ℤ ( x > 3 ∧ y < 3 ⇒ x·x - 2y > 5 )
+  Given x,y ∈ ℤ:
+    If x > 3 ∧ y < 3:
+      9 < x·x
+      ∀ k,m ∈ ℤ ( k < m ⇒ k + 1 ≤ m ) [lemma]
+        Given k,m ∈ ℤ:
+          If k < m:
+            If k+1 > m:
+              k < m < k+1
+              0 < m–k < 1
+              ∃x ∈ ℤ ( 0 < x < 1 )
+              ¬∃x ∈ ℤ ( 0 < x < 1 ) [lemma]
+                If ∃x ∈ ℤ ( 0 < x < 1 ):
+                  Let a ∈ ℤ such that 0 < a < 1
+                  0 < a 
+                  a ∈ ℕ ∨ –a ∈ ℕ 
+                  If a ∈ ℕ:
+                    a ∈ ℕ
+                  If –a ∈ ℕ:
+                    –a ≥ 0
+                    a ≤ 0 < a
+                    a < a
+                    ⊥ 
+                    a ∈ ℕ
+                  a ∈ ℕ
+                  0 < a ⇒ 0 + 1 ≤ a [lemma]
+                  1 ≤ a
+                  1 ≤ a < 1
+                  1 < 1
+                  ⊥ 
+                ¬∃x ∈ ℤ ( 0 < x < 1 )
+            k+1 ≤ m
+        ∀ k,m ∈ ℤ ( k < m ⇒ k + 1 ≤ m )
+      ∀ k,m ∈ ℤ ( k < m ⇒ k + 1 ≤ m ) [lemma]
+        Given k,m ∈ ℤ:
+          If k < m:
+            k ∈ ℕ ∨ –k ∈ ℕ 
+            m ∈ ℕ ∨ –m ∈ ℕ 
+            If k ∈ ℕ:
+              If m ∈ ℕ:
+                k < m ⇒ k + 1 ≤ m [lemma]
+                k + 1 ≤ m
+              If –m ∈ ℕ:
+                m ≤ 0
+                0 < k < m
+                m < m
+                ⊥ 
+                k + 1 ≤ m
+            If –k ∈ ℕ:
+              If m ∈ ℕ:
+                If k + 1 > m:
+                  k < m < k + 1
+                  0 < m - k < 1
+                  ∃x ∈ ℤ ( 0 < x < 1 ) 
+                  ¬∃x ∈ ℤ ( 0 < x < 1 ) [lemma]
+                    If ∃x ∈ ℤ ( 0 < x < 1 ):
+                      Let a ∈ ℤ such that 0 < a < 1
+                      0 < a 
+                      a ∈ ℕ [?]
+                      0 < a ⇒ 0 + 1 ≤ a [lemma]
+                      1 ≤ a
+                      1 ≤ a < 1
+                      1 < 1
+                      ⊥ 
+                    ¬∃x ∈ ℤ ( 0 < x < 1 )
+                  ⊥
+                k+1 ≤ m
+              If –m ∈ ℕ:
+                –m < –k
+                –m < –k ⇒ –m + 1 ≤ –k [lemma]
+                –m + 1 ≤ –k
+                If k + 1 > m:
+                  –k–1 < –m
+                  –k < –m+1
+                  –k < –k
+                  ⊥
+                k+1 ≤ m
+            k+1 ≤ m
+        ∀ k,m ∈ ℤ ( k < m ⇒ k + 1 ≤ m )
+      y < 3 ⇒ y+1 ≤ 3 [lemma]
+      y + 1 ≤ 3
+      y ≤ 2
+      2·y ≤ 4
+      2·y + 5 ≤ 9
+      2·y + 5 ≤ 9 < x·x
+      2·y + 5 ≤ 9 < x·x ⇒ 2·y + 5 < x·x [lemma]
+      2·y + 5 < x·x
+      x·x > 2·y + 5
+      x·x+(-2·y) > (-2·y) + 2·y + 5
+      x·x - 2·y > 5
+    x > 3 ∧ y < 3 ⇒ x·x - 2y > 5
+  ∀ x,y ∈ ℤ ( x > 3 ∧ y < 3 ⇒ x·x - 2y > 5 )

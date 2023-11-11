@@ -1,0 +1,23 @@
+Add the type ℚ, ℚ ∈ set, ℚ[≠0] = { x : x∈ℚ ∧ x≠0 }, reuse the symbols and operations of PA and add the binary operation / (ℚ is an ordered field containing ℤ).
+[closure] ∀x,y∈ℚ (x+y∈ℚ). 
+[closure] ∀x,y∈ℚ (x⋅y∈ℚ). 
+[closure] ∀x,y∈ℚ (x-y∈ℚ). 
+[closure] ∀x∈ℚ ∀y∈ℚ[≠0] (x/y∈ℚ). 
+[ring] ∀x,y∈ℚ (x+y=y+x). 
+[ring] ∀x,y∈ℚ (x⋅y=y⋅x). 
+[ring] ∀x,y,z∈ℚ (x+(y+z)=(x+y)+z). 
+[ring] ∀x,y,z∈ℚ (x⋅(y⋅z)=(x⋅y)⋅z). 
+[ring] ∀x,y,z∈ℚ (x⋅(y+z)=x⋅y+x⋅z). 
+[ring] ∀x∈ℚ (x+0=x). 
+[ring] ∀x∈ℚ (x⋅1=x). 
+[order] ∀x∈ℚ (¬x<x). 
+[order] ∀x,y∈ℚ (x<y∨y<x∨x=y). 
+[order] ∀x,y,z∈ℚ (x<y∧y<z⇒x<z). 
+[order] ∀x,y,z∈ℚ (x<y⇒x+z<y+z). 
+[order] ∀x,y,z∈ℚ (x<y∧0<z⇒x⋅z<y⋅z). 
+[ring] ∀x∈ℚ ( x+(−x) = 0 )
+[ring] ∀x,y∈ℚ ( (x−y)+y = x )
+[order] 0<1.
+[ℤ ⊆ ℚ] ∀x∈ℤ ( x∈ℚ ) 
+[ℚ = ℤ/ℤ*] ∀x∈ℚ ∃p,q∈ℤ ( q ≠ 0 ∧ p = q·x )
+[field] ∀x∈ℚ ∀y∈ℚ[≠0] ( x = y·(x/y) )

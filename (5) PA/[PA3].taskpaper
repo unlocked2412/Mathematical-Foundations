@@ -1,0 +1,71 @@
+Notes:
+	It is not hard to prove (PA3) using strong induction or well-ordering. I'll let you figure out how to use strong induction yourself. For the proof that uses well-ordering, notice that well-ordering gives you ∀k∈ℕ ( k > 1 ⇒ ∃p∈ℕ ( p > 1 ∧ p | k ∧ ∀q∈ℕ ( 1 < q ∧ q | k ⇒ q ≥ p ) ) ), so you would have to get from "∀q∈ℕ ( 1 < q ∧ q | k ⇒ q ≥ p )" to "¬∃q∈ℕ ( 1 < q < p ∧ q | p )", which is easy using a lemma that | is transitive.
+Lemma: 
+	Prove ∀ x,y,z ( x | y ∧ y | z ⇒ x | z )
+	(infix) | : ℕ^2→Bool is defined via ∀x,y∈ℕ ( x | y ⇔ ∃d∈ℕ ( y = x · d ) )
+	Given x,y,z ∈ ℕ:
+		If x | y ∧ y | z:
+			∃ d ∈ ℕ ( y = x · d )
+			∃ d ∈ ℕ ( z = y · d )
+			Let a ∈ ℕ such that y = x · a
+			Let b ∈ ℕ such that z = y · b
+			z = (x · a) · b
+			z = x · ( a · b )
+			∃ d ∈ ℕ ( z = x · d )
+			x | z
+	∀ x,y,z ( x | y ∧ y | z ⇒ x | z )
+∀k∈ℕ ( k > 1 ⇒ ∃p∈ℕ ( p > 1 ∧ p | k ∧ ¬∃q∈ℕ ( 1 < q < p ∧ q | p ) ), where "1 < q < p" is short-hand for "1 < q ∧ q < p". ["Every natural number (greater than 1) has (at least) one prime divisor"]
+Prove PA3 using strong induction: @today
+	Prime(n) ≡ n > 1 ∧ ¬∃q∈ℕ ( 1 < q < n ∧ q | n ) 
+	Q(k) ≡ k > 1 ⇒ ∃p∈ℕ ( p | k ∧ Prime(p) )
+	Given k ∈ ℕ:
+		If ∀i ∈ ℕ ( i < k ⇒ Q(i) ):
+			If k > 1:
+				If Prime(k):
+					k | k ∧ Prime(k)
+					∃p∈ℕ ( p | k ∧ Prime(p) )
+				If ¬Prime(k):
+					∃q∈ℕ ( 1 < q < k ∧ q | k ) 
+					Let d ∈ ℕ such that 1 < d < k ∧ d | k
+					d < k ⇒ Q(d)
+					Q(d)
+					d > 1 ⇒ ∃p∈ℕ ( p > 1 ∧ p | d ∧ Prime(p) )
+					∃p∈ℕ ( p > 1 ∧ p | d ∧ Prime(p) )
+					Let a ∈ ℕ such that a > 1 ∧ a | d ∧ Prime(a) 
+					a | d ∧ d | k
+					a | k
+					a | k ∧ Prime(a)
+					∃p∈ℕ ( p | k ∧ Prime(p) )
+				∃p∈ℕ ( p | k ∧ Prime(p) )
+			Q(k)
+		∀k ∈ ℕ ( Q(k) ) [strong induction]
+	∀k∈ℕ ( k > 1 ⇒ ∃p∈ℕ ( p > 1 ∧ p | k ∧ ¬∃q∈ℕ ( 1 < q < p ∧ q | p ) )
+Prove PA3 using well-ordering: @today
+	Prime(n) ≡ n > 1 ∧ ¬∃q∈ℕ ( 1 < q < n ∧ q | n ) 
+	Q(k) ≡ k > 1 ⇒ ∃p∈ℕ ( p | k ∧ Prime(p) )
+	Given k ∈ ℕ:
+		If k > 1:
+			k > 1 ∧ k | k  
+			∃d ∈ ℕ ( d > 1 ∧ d | k )
+			Let m ∈ S such that m > 1 ∧ m | k ∧ ∀n ∈ ℕ ( n > 1 ∧ n | k ⇒ n ≥ m )
+			If Prime(m):
+				m | k ∧ Prime(m)
+				∃p∈ℕ ( p | k ∧ Prime(p) )
+			If ¬Prime(m):
+				m ≤ 1 ∨ ∃q∈ℕ ( 1 < q < m ∧ q | m ) 
+				If m ≤ 1:
+					⊥
+				If ∃q∈ℕ ( 1 < q < m ∧ q | m ):
+					Let b ∈ S such that 1 < b < m ∧ b | m
+					b | m ∧ m | k
+					b | k
+					b > 1 ∧ b | k
+					b ≥ m
+					b < m
+					⊥
+				⊥
+				∃p∈ℕ ( p | k ∧ Prime(p) )
+			∃p∈ℕ ( p | k ∧ Prime(p) )
+		Q(k)
+	∀k ∈ ℕ ( Q(k) )
+	∀k∈ℕ ( k > 1 ⇒ ∃p∈ℕ ( p > 1 ∧ p | k ∧ ¬∃q∈ℕ ( 1 < q < p ∧ q | p ) )

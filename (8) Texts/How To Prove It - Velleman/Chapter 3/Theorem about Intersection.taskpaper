@@ -1,0 +1,57 @@
+Define nset to be the type { S : S∈set ∧ ∃A∈set ( A∈S ) }
+Define fset to be the type { S : S∈set ∧ ∀x∈obj ( x∈S ⇒ x∈set ) }
+∀S∈set ∀x∈obj ( x∈Union(S) ⇔ ∃T∈set ( T∈S ∧ x∈T ) ) 
+∀S∈nset ∀x∈obj ( x∈Intersect(S) ⇔ ∀T∈set ( T∈S ⇒ x∈T ) ) [lemma]
+Given F,G ∈ fset:
+  If F⋂G≠∅:
+    ∀S∈obj ( S∈set ∧ ∃X∈set ( X∈S ) ⇔ S ∈ nset ) [lemma]
+      Given S ∈ obj:
+        If S ∈ set ∧ ∃ X ∈ set ( X ∈ S ):
+          ∃ X ∈ set ( X ∈ S )
+          Let X' ∈ set such that X' ∈ S
+          X' ∈ set ∧ X' ∈ S
+          ∃A∈set ( A∈S ) [A is unused]
+          S∈set ∧ ∃A∈set ( A∈S )
+          S ∈ { S : S∈set ∧ ∃A∈set ( A∈S ) }
+          S ∈ nset
+        If S ∈ nset:
+          S ∈ { S : S∈set ∧ ∃A∈set ( A∈S ) }
+          S ∈ set ∧ ∃ A ∈ set ( A ∈ S )
+          ∃A∈set ( A∈S )
+          Let A' ∈ set such that A' ∈ S
+          A' ∈ set ∧ A' ∈ S
+          ∃X∈set ( X∈S ) [X is unused]
+          S∈set ∧ ∃X∈set ( X∈S )
+        S∈set ∧ ∃X∈set ( X∈S ) ⇔ S∈set ∧ S ∈ nset
+      ∀S∈obj ( S∈set ∧ ∃X∈set ( X∈S ) ⇔ S∈set ∧ S ∈ nset )
+    Given x ∈ Intersect(F):
+      ∃ x ∈ obj ( x ∈ F ⋂ G )
+      Let A ∈ obj such that A ∈ F ⋂ G
+      A ∈ F ∧ A ∈ G
+      A ∈ F
+      F ∈ { S : S∈set ∧ ∀x∈obj ( x∈S ⇒ x∈set ) }
+      F∈set ∧ ∀x∈obj ( x∈F ⇒ x∈set )
+      ∀x∈obj ( x∈F ⇒ x∈set )
+      A∈F ⇒ A∈set
+      A ∈ set
+      A ∈ set ∧ A ∈ F
+      ∃ X ∈ set ( X ∈ F )
+      F ∈ set ∧ ∃X∈set ( X∈F )
+      ∀S∈obj ( S∈set ∧ ∃X∈set ( X∈S ) ⇔ S ∈ nset )
+      F∈set ∧ ∃X∈set ( X∈F ) ⇔ F ∈ nset
+      F ∈ nset
+      ∀S∈nset ∀x∈obj ( x∈Intersect(S) ⇔ ∀T∈set ( T∈S ⇒ x∈T ) ) [lemma]
+      ∀x∈obj ( x∈Intersect(F) ⇔ ∀T∈set ( T∈F ⇒ x∈T ) )
+      x∈Intersect(F) ⇔ ∀T∈set ( T∈F ⇒ x∈T )
+      ∀T∈set ( T∈F ⇒ x∈T )
+      A ∈ F ⇒ x ∈ A
+      x ∈ A
+      ∀S∈set ∀x∈obj ( x∈Union(S) ⇔ ∃T∈set ( T∈S ∧ x∈T ) )
+      ∀x∈obj ( x∈Union(G) ⇔ ∃T∈set ( T∈G ∧ x∈T ) )
+      x∈Union(G) ⇔ ∃T∈set ( T∈G ∧ x∈T )
+      A ∈ G ∧ x ∈ A
+      ∃T∈set ( T∈G ∧ x∈T )
+      x∈Union(G)
+    ∀ x ∈ Intersect(F) ( x ∈ Union(G) )
+    Intersect(F)⊆Union(G)
+∀F,G∈fset ( F⋂G≠∅ ⇒ Intersect(F)⊆Union(G) )
